@@ -63,7 +63,7 @@ function initBotanicalOptics(){
    if(this.failed)return;
    if(reduceTransparency.matches){this.canvas.hidden=true;this.host.classList.remove('gl-optics-ready');return;}
    const hostRect=this.host.getBoundingClientRect();if(hostRect.bottom<0||hostRect.top>innerHeight||hostRect.width===0||hostRect.height===0)return;
-   const palette=document.documentElement.dataset.palette==='dark'?'dark':'light';const asset=assets[palette][this.key==='main'?'main':'cover'+(mobile.matches?'Mobile':'')];if(this.asset!==asset){this.asset=asset;this.image.src=asset;return;}
+   const palette=document.documentElement.dataset.palette==='dark'?'dark':'light';const asset=assets[palette][(this.key==='main'?'main':'cover')+(mobile.matches?'Mobile':'')];if(this.asset!==asset){this.asset=asset;this.image.src=asset;return;}
    if(!this.image.complete||!this.image.naturalWidth)return;
    this.canvas.hidden=false;
    const sliceTop=this.key==='main'?Math.max(0,Math.floor(-hostRect.top)-32):0;
@@ -74,7 +74,13 @@ function initBotanicalOptics(){
     this.w=w;this.h=h;this.dpr=dpr;this.sliceTop=sliceTop;this.palette=palette;this.textureDirty=false;
     this.canvas.width=Math.round(w*dpr);this.canvas.height=Math.round(h*dpr);this.source.width=this.canvas.width;this.source.height=this.canvas.height;
     const ctx=this.source.getContext('2d'),scale=this.source.width/this.image.naturalWidth,iw=this.source.width,ih=this.image.naturalHeight*scale;
-    ctx.fillStyle=palette==='dark'?'#232826':'#DAECF4';ctx.fillRect(0,0,this.source.width,this.source.height);ctx.globalAlpha=this.key==='main'?.36:1;ctx.drawImage(this.image,0,this.key==='main'?(48-sliceTop)*dpr:0,iw,ih);ctx.globalAlpha=1;
+    ctx.fillStyle=palette==='dark'?'#232826':'#DAECF4';ctx.fillRect(0,0,this.source.width,this.source.height);ctx.globalAlpha=this.key==='main'?.36:1;
+    if(this.key==='main'){
+     // Match CSS repeat-y at the same scale and origin, including deep scroll.
+     const origin=(48-sliceTop)*dpr,first=origin+Math.floor(-origin/ih)*ih;
+     for(let y=first;y<this.source.height;y+=ih)ctx.drawImage(this.image,0,y,iw,ih);
+    }else ctx.drawImage(this.image,0,0,iw,ih);
+    ctx.globalAlpha=1;
     gl.bindTexture(gl.TEXTURE_2D,this.texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,this.source);
     gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.uniform2f(L.u_resolution,this.canvas.width,this.canvas.height);gl.uniform2f(L.u_size,w,h);gl.uniform1f(L.u_dpr,dpr);
    }

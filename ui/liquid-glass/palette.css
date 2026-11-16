@@ -10,7 +10,7 @@
 :root[data-palette="light"] .nav button{border-color:rgba(80,158,171,.34)}
 :root[data-palette="dark"] .nav button{border-color:rgba(218,236,244,.22)}
 :root[data-palette] .nav button:is([aria-selected="true"],[aria-current="true"]){border-color:#509EAB;box-shadow:inset 0 0 0 1px rgba(80,158,171,.46),0 4px 12px rgba(35,40,38,.10)!important}
-#main-content::before{opacity:.36}
+#main-content::before{opacity:.36;background-repeat:repeat-y}
 #main-content>.glass-optics{z-index:-1}
 :root[data-palette] .react-glass-material .trip-liquid-material>.glass{background:linear-gradient(155deg,rgba(218,236,244,.10),transparent 48%,rgba(80,158,171,.025))!important;box-shadow:inset 0 1px .5px rgba(218,236,244,.30),inset 0 -1px 1px rgba(35,40,38,.12),0 5px 16px rgba(35,40,38,.07)!important}
 :root[data-palette] .react-glass-material>span[style*="mix-blend-mode"]{opacity:.28!important}
