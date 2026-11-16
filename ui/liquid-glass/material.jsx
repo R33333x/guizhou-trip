@@ -19,10 +19,10 @@ function Material({host}){
   // component's blur/rim material because it does not support SVG backdrop warp.
   const safari=/Safari/.test(navigator.userAgent)&&!/Chrome|Chromium|Edg/.test(navigator.userAgent);
   warp.style.filter='none';
-  const value=(safari?'':filter+' ')+'blur(7px) saturate(125%)';
+  const value=(safari?'':filter+' ')+'blur(3px) saturate(120%)';
   warp.style.backdropFilter=value;warp.style.webkitBackdropFilter=value;
  },[host,size.width,size.height]);
- return <LiquidGlass key={size.width+'x'+size.height} className="trip-liquid-material" cornerRadius={18} padding="0px" displacementScale={24} blurAmount={.12} saturation={125} aberrationIntensity={.8} elasticity={0} mode="standard" overLight={false} globalMousePos={{x:0,y:0}} mouseOffset={pointer} style={{position:'absolute',top:'50%',left:'50%',width:'100%',height:'100%'}}><span aria-hidden="true" data-material-theme={theme}/></LiquidGlass>;
+ return <LiquidGlass key={size.width+'x'+size.height} className="trip-liquid-material" cornerRadius={18} padding="0px" displacementScale={24} blurAmount={.07} saturation={125} aberrationIntensity={.35} elasticity={0} mode="standard" overLight={false} globalMousePos={{x:0,y:0}} mouseOffset={pointer} style={{position:'absolute',top:'50%',left:'50%',width:'100%',height:'100%'}}><span aria-hidden="true" data-material-theme={theme}/></LiquidGlass>;
 }
 function remove(host,entry){entry.root.unmount();entry.layer.remove();host.classList.remove('react-glass-card');mounted.delete(host);}
 function refresh(){scheduled=0;for(const [host,entry] of mounted){if(!host.isConnected||!host.getClientRects().length||reducedTransparency.matches)remove(host,entry);}
