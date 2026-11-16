@@ -11,3 +11,5 @@ Safari/Firefox 对 SVG backdrop 位移的支持有限；Safari 显式使用模�
 上游许可证保存在 public/index.html 源码及内联 bundle 的 legal comments。参考：
 - https://github.com/rdev/liquid-glass-react
 - https://github.com/dashersw/liquid-glass-js
+
+配色：白天采用方案 D（冰蓝底、苔绿主叶、湖蓝副叶、炭黑字）；夜间采用方案 B（炭黑底、苔绿主叶、湖蓝副叶、冰蓝字）。palette.js 将已有主题偏好与系统主题映射到 data-palette；CSS 和 WebGL 背景采样共用同一套配色。

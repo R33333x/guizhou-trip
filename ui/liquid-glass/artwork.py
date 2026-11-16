@@ -27,6 +27,19 @@ heroMobile=svg(430,690,[fern(-29,-38,1.23,-16,'#285aca'),fern(461,-51,1.23,17,'#
 # Sparse artwork sits behind card glass, away from long text blocks.
 main='<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1350" viewBox="0 0 1120 1350">'+fan(1008,135,1.18,-35,'#476f9b','#557e65')+fern(35,194,1.4,-26,'#4a7198')+fan(621,499,1.5,24,'#567ca0','#5e826a')+fern(1113,793,1.55,29,'#55769b')+'</svg>'
 import json
-assets={name:'data:image/svg+xml,'+quote(s,safe='') for name,s in [('cover',hero),('coverMobile',heroMobile),('main',main)]}
+import re
+original={name:s for name,s in [('cover',hero),('coverMobile',heroMobile),('main',main)]}
+assets={}
+primary=['#285aca','#284dbd','#2859c4','#305bcc','#2b5ac9','#264fba','#2b5dcc','#476f9b','#4a7198','#567ca0','#55769b']
+alternate=['#237a62','#227f65','#238068','#207b64','#557e65','#5e826a']
+for theme,background,seedColor in [('light','#DAECF4','#232826'),('dark','#232826','#DAECF4')]:
+ assets[theme]={}
+ for name,svgText in original.items():
+  svgText=re.sub(r'#[0-9A-Fa-f]{6}',lambda m:background if m[0]=='#103c2f' else '#558F14' if m[0] in primary else '#509EAB' if m[0] in alternate else seedColor if m[0]=='#c49d51' else '#509EAB' if m[0]=='#234ed0' else m[0],svgText)
+  assets[theme][name]='data:image/svg+xml,'+quote(svgText,safe='')
 (output/'art.json').write_text(json.dumps(assets))
-(output/'art.css').write_text(':root{--botanical-cover:url("'+assets['cover']+'");--botanical-main:url("'+assets['main']+'");}\n@media(max-width:767px){:root{--botanical-cover:url("'+assets['coverMobile']+'");}}\n')
+css=[]
+for theme,urls in assets.items():
+ css.append(':root[data-palette="'+theme+'"]{--botanical-cover:url("'+urls['cover']+'");--botanical-main:url("'+urls['main']+'");}')
+ css.append('@media(max-width:767px){:root[data-palette="'+theme+'"]{--botanical-cover:url("'+urls['coverMobile']+'");}}')
+(output/'art.css').write_text('\n'.join(css))

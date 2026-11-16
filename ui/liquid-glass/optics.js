@@ -10,7 +10,7 @@ function initBotanicalOptics(){
  const vertexSource=`attribute vec2 a_position;void main(){gl_Position=vec4(a_position,0.,1.);}`;
  const fragmentSource=`precision highp float;
  uniform sampler2D u_image;uniform vec2 u_resolution;uniform vec2 u_size;uniform float u_dpr;
- uniform vec4 u_boxes[20];uniform float u_radii[20];uniform int u_count;uniform vec2 u_pointer;
+ uniform vec4 u_boxes[20];uniform float u_radii[20];uniform int u_count;uniform vec2 u_pointer;uniform vec3 u_tint;
  float distanceToBox(vec2 point,vec2 size,float radius){vec2 q=abs(point-size*.5)-(size*.5-radius);return length(max(q,0.))+min(max(q.x,q.y),0.)-radius;}
  vec3 sampleScene(vec2 point){return texture2D(u_image,clamp(point/u_size,vec2(.001),vec2(.999))).rgb;}
  void main(){
@@ -27,7 +27,7 @@ function initBotanicalOptics(){
   color+=sampleScene(uv+vec2(1.1,0.))*.125; color+=sampleScene(uv-vec2(1.1,0.))*.125;
   color+=sampleScene(uv+vec2(0.,1.1))*.125;color+=sampleScene(uv-vec2(0.,1.1))*.125;
   color.r=mix(color.r,sampleScene(uv+split).r,.35);color.b=mix(color.b,sampleScene(uv-split).b,.35);
-  color=mix(color,vec3(.026,.105,.074),.18);
+  color=mix(color,u_tint,.18);
   float lamp=max(dot(normal,normalize(vec2(-.65,-.8))),0.);
   float pointerGlow=exp(-length(p-u_pointer)/160.);
   color+=vec3(.67,.82,.82)*(rim*(.025+.20*lamp)+inner*.012+pointerGlow*.035);
@@ -54,7 +54,7 @@ function initBotanicalOptics(){
    const gl=this.gl,compile=(type,source)=>{const shader=gl.createShader(type);gl.shaderSource(shader,source);gl.compileShader(shader);if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS)){gl.deleteShader(shader);throw Error('Glass shader unavailable');}return shader;};
    const vertex=compile(gl.VERTEX_SHADER,vertexSource),fragment=compile(gl.FRAGMENT_SHADER,fragmentSource),program=gl.createProgram();gl.attachShader(program,vertex);gl.attachShader(program,fragment);gl.linkProgram(program);gl.deleteShader(vertex);gl.deleteShader(fragment);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error('Glass shader link failed');
    this.program=program;gl.useProgram(program);const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const position=gl.getAttribLocation(program,'a_position');gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
-   this.locations={};['u_image','u_resolution','u_size','u_dpr','u_count','u_pointer','u_boxes[0]','u_radii[0]'].forEach(name=>this.locations[name]=gl.getUniformLocation(program,name));
+   this.locations={};['u_image','u_resolution','u_size','u_dpr','u_count','u_pointer','u_tint','u_boxes[0]','u_radii[0]'].forEach(name=>this.locations[name]=gl.getUniformLocation(program,name));
    this.texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,this.texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.uniform1i(this.locations.u_image,0);gl.clearColor(0,0,0,0);
    this.source=document.createElement('canvas');
   }
@@ -62,7 +62,7 @@ function initBotanicalOptics(){
    if(this.failed)return;
    if(reduceTransparency.matches){this.canvas.hidden=true;this.host.classList.remove('gl-optics-ready');return;}
    const hostRect=this.host.getBoundingClientRect();if(hostRect.bottom<0||hostRect.top>innerHeight||hostRect.width===0||hostRect.height===0)return;
-   const asset=assets['cover'+(mobile.matches?'Mobile':'')];if(this.asset!==asset){this.asset=asset;this.image.src=asset;return;}
+   const palette=document.documentElement.dataset.palette==='dark'?'dark':'light';const asset=assets[palette]['cover'+(mobile.matches?'Mobile':'')];if(this.asset!==asset){this.asset=asset;this.image.src=asset;return;}
    if(!this.image.complete||!this.image.naturalWidth)return;
    this.canvas.hidden=false;
    const w=Math.round(hostRect.width),h=Math.round(hostRect.height),dpr=Math.min(devicePixelRatio||1,1.5);
@@ -71,7 +71,7 @@ function initBotanicalOptics(){
     this.w=w;this.h=h;this.dpr=dpr;this.textureDirty=false;
     this.canvas.width=Math.round(w*dpr);this.canvas.height=Math.round(h*dpr);this.source.width=this.canvas.width;this.source.height=this.canvas.height;
     const ctx=this.source.getContext('2d'),scale=this.source.width/this.image.naturalWidth,iw=this.source.width,ih=this.image.naturalHeight*scale;
-    ctx.fillStyle='#103c2f';ctx.fillRect(0,0,this.source.width,this.source.height);ctx.drawImage(this.image,0,0,iw,ih);
+    ctx.fillStyle=palette==='dark'?'#232826':'#DAECF4';ctx.fillRect(0,0,this.source.width,this.source.height);ctx.drawImage(this.image,0,0,iw,ih);
     gl.bindTexture(gl.TEXTURE_2D,this.texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,this.source);
     gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.uniform2f(L.u_resolution,this.canvas.width,this.canvas.height);gl.uniform2f(L.u_size,w,h);gl.uniform1f(L.u_dpr,dpr);
    }
@@ -82,10 +82,11 @@ function initBotanicalOptics(){
     boxes.set([rect.left-hostRect.left-inset,rect.top-hostRect.top-(isCounter?4:0),rect.width+inset*2,rect.height+(isCounter?10:0)],count*4);
     radii[count]=isCounter?(mobile.matches?14:18):parseFloat(getComputedStyle(surface).borderRadius)||14;count++;
    });
-   gl.useProgram(this.program);gl.uniform4fv(L['u_boxes[0]'],boxes);gl.uniform1fv(L['u_radii[0]'],radii);gl.uniform1i(L.u_count,count);gl.uniform2f(L.u_pointer,...(reduceMotion.matches?[-1000,-1000]:this.pointer));gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,6);this.host.classList.add('gl-optics-ready');
+   gl.useProgram(this.program);gl.uniform3f(L.u_tint,...(palette==='dark'?[35/255,40/255,38/255]:[218/255,236/255,244/255]));gl.uniform4fv(L['u_boxes[0]'],boxes);gl.uniform1fv(L['u_radii[0]'],radii);gl.uniform1i(L.u_count,count);gl.uniform2f(L.u_pointer,...(reduceMotion.matches?[-1000,-1000]:this.pointer));gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,6);this.host.classList.add('gl-optics-ready');
   }
  }
  instances.push(new GlassScene(document.querySelector('.trip-cover'),'.count-unit,.nav button','cover'));
+ new MutationObserver(()=>requestRender()).observe(document.documentElement,{attributes:true,attributeFilter:['data-palette']});
  window.addEventListener('resize',()=>requestRender());window.addEventListener('scroll',()=>requestRender(),{passive:true});document.addEventListener('visibilitychange',()=>{if(document.hidden){if(pending)cancelAnimationFrame(pending);pending=0;animateUntil=0;}else requestRender();});
  for(const preference of [reduceMotion,reduceTransparency,mobile])preference.addEventListener('change',()=>requestRender());window.addEventListener('pageshow',()=>requestRender());requestRender();
 }
