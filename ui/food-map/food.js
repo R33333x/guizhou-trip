@@ -1,7 +1,7 @@
 /* Source records are inserted by build_food.py. User text is always escaped. */
 const FOOD_REGIONS=[
- {id:'guiyang',name:'贵阳市内',days:'11/27 抵达日 · 11/29 黔灵山那天',short:'抵达日 / 黔灵山',city:'贵阳市',note:'进城后，可以按想吃的店分头逛吃。清单集中在云岩、南明一带；六厂门糯米饭标注只有早上才有，留意到店时间。'},
- {id:'anshun',name:'安顺',days:'11/28 铜鼓荡 · 11/29 黄果树',short:'铜鼓荡 / 黄果树',city:'安顺市',note:'清单中的店主要在安顺市区，徒步或游览结束后可结合返程路线安排。黄果树、铜鼓荡与市区之间需要转场，先核对用车与集合时间，再决定去哪家。'},
+ {id:'guiyang',name:'贵阳市内',days:'11/27 抵达日 · 11/29 黔灵山那天',short:'抵达日 / 黔灵山',city:'贵阳市',note:'抵达日拖着行李，先按到达时间分组吃正餐，饭后再决定逛市区或回民宿。清单集中在云岩、南明一带；六厂门糯米饭标注只有早上才有，留意到店时间。'},
+ {id:'anshun',name:'安顺',days:'11/28 铜鼓荡 · 11/29 黄果树',short:'铜鼓荡 / 黄果树',city:'安顺市',note:'11/28 可在去铜鼓荡前选早餐，结束游玩后也可留在安顺吃晚饭；若先返程，再选贵阳市区或民宿附近。清单中的店主要在安顺市区。黄果树、铜鼓荡与市区之间需要转场，先核对用车与集合时间，再决定去哪家。'},
  {id:'huaxi',name:'民宿周边',days:'花溪片区 · 从禧竹山房出发',short:'花溪 / 民宿一带',city:'贵阳市花溪区',note:'民宿在青岩古镇西门。这三家是花溪区的备选，未必能从民宿步行到达；先点地图核对距离与营业情况，再决定打车、结伴或打包。'}
 ];
 let foodRegion='guiyang',foodMeal='all',foodQuery='',foodReady=false,foodImageTrigger=null,foodBodyOverflow='';
@@ -57,11 +57,11 @@ document.addEventListener('click',event=>{
  const share=event.target.closest('[data-food-share]');if(share){const shop=FOOD_SHOPS.find(s=>s.id===share.dataset.foodShare);if(shop)shareFood(shop,share);}
 });
 document.addEventListener('keydown',event=>{const map=event.target instanceof Element&&event.target.closest('.food-map-region');if(map&&['Enter',' '].includes(event.key)){event.preventDefault();setFoodRegion(map.dataset.foodRegion);}});
-// Route hints add a food entry without changing the timed itinerary.
+// Food entries follow each day’s flexible meal areas.
 function addFoodDayLinks(){
  for(const day of [1,2,3,4]){
   const host=$('day-'+day);if(!host||host.querySelector('.food-day-link'))continue;
-  const regions=day===1?['guiyang']:day===2?['anshun']:day===3?['anshun','guiyang']:['huaxi'];
+  const regions=day===1?['guiyang']:day===2?['anshun','guiyang','huaxi']:day===3?['anshun','guiyang','huaxi']:['huaxi'];
   const area=regions.map(id=>FOOD_REGIONS.find(r=>r.id===id));
   const aside=document.createElement('aside');aside.className='food-day-link';aside.innerHTML=`<span>这一站吃什么</span>${area.map(r=>`<button type="button" class="external-button" data-food-open="${r.id}">${r.name}美食 →</button>`).join('')}`;
   host.querySelector('.day-footer')?.before(aside);
