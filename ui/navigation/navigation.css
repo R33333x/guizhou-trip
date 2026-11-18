@@ -1,0 +1,31 @@
+/* Seven concise destinations: one desktop row; three + four on phones. */
+.nav{padding:18px 0 22px}
+.nav #day-nav{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;overflow:visible;align-items:start}
+#day-nav .nav-primary,#day-nav .nav-tools{display:contents}
+#day-nav :is(.nav-primary,.nav-tools)>button{display:flex;align-items:center;justify-content:center;min-height:60px;padding:10px 8px;font-size:15px;font-weight:500;line-height:1.4;letter-spacing:.04em;grid-column:auto}
+#day-nav button[aria-selected="true"],#day-nav button[aria-current="true"]{font-weight:600}
+.nav-caption{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;min-width:0}
+.nav-emoji{display:inline-block;flex-shrink:0;font-size:19px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif;letter-spacing:0}
+#day-nav .nav-days{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:3px 0 0;padding-top:14px}
+#day-nav .nav-days button{padding:10px 6px;min-height:66px;font-size:14px}
+#day-nav .nav-days button small{font-size:10px;line-height:1.5;letter-spacing:.03em;margin-top:6px}
+#day-nav .nav-days .nav-emoji{font-size:16px}
+.packing-tips{margin-top:32px;padding-top:26px;border-top:1px solid var(--line)}
+.packing-tips .section-head{margin-bottom:18px}
+@media(max-width:899px){
+ .nav{padding:14px 0 18px}
+ .nav #day-nav{display:block}
+ #day-nav .nav-primary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+ #day-nav .nav-tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
+ #day-nav .nav-primary>button{min-height:58px;font-size:15px}
+ #day-nav .nav-tools>button{min-height:48px;font-size:13px;padding:8px 4px}
+ #day-nav .nav-tools .nav-caption{gap:6px}
+ #day-nav .nav-tools .nav-emoji{font-size:17px}
+ #day-nav .nav-days{display:grid;margin-top:12px;gap:8px;padding-top:12px}
+ #day-nav .nav-days button{font-size:12px;min-height:62px;padding:9px 2px}
+ #day-nav .nav-days .nav-caption{gap:4px}
+ #day-nav .nav-days .nav-emoji{font-size:14px}
+ #day-nav .nav-days button small{font-size:9px}
+ .packing-tips{margin-top:26px;padding-top:24px}
+}
+@media(max-width:359px){#day-nav .nav-primary{gap:8px}#day-nav .nav-tools{gap:7px}#day-nav .nav-tools .nav-caption{gap:4px}#day-nav .nav-tools .nav-emoji{font-size:16px}}
