@@ -8,15 +8,20 @@ const mounted=new Map(),materialLimit=28;
 let scheduled=0,materialId=0;
 const reducedTransparency=matchMedia('(prefers-reduced-transparency: reduce)');
 function Material({host}){
- const [size,setSize]=useState(()=>({width:Math.max(1,host.offsetWidth),height:Math.max(1,host.offsetHeight)}));
+ const measure=()=>{
+  const style=getComputedStyle(host),radius=Math.max(0,(parseFloat(style.borderTopLeftRadius)||14)-(parseFloat(style.borderTopWidth)||0));
+  return {width:Math.max(1,host.offsetWidth),height:Math.max(1,host.offsetHeight),radius};
+ };
+ const [size,setSize]=useState(measure);
  useEffect(()=>{
   const resize=new ResizeObserver(()=>setSize(previous=>{
-   const width=Math.max(1,host.offsetWidth),height=Math.max(1,host.offsetHeight);
-   return previous.width===width&&previous.height===height?previous:{width,height};
+   const next=measure();
+   return previous.width===next.width&&previous.height===next.height&&previous.radius===next.radius?previous:next;
   }));
   resize.observe(host);return()=>resize.disconnect();
  },[host]);
  useLayoutEffect(()=>{
+  host.querySelector('.react-glass-material')?.style.setProperty('--material-radius',size.radius+'px');
   const warp=host.querySelector('.glass__warp');if(!warp)return;
   const filter=warp.style.filter;
   // Safari retains a clear blur/rim fallback where SVG backdrop warp is absent.
@@ -24,8 +29,8 @@ function Material({host}){
   warp.style.filter='none';
   const value=(safari?'':filter+' ')+'blur(3px) saturate(120%)';
   warp.style.backdropFilter=value;warp.style.webkitBackdropFilter=value;
- },[host,size.width,size.height]);
- return <LiquidGlass key={size.width+'x'+size.height} className="trip-liquid-material" cornerRadius={14} padding="0px" displacementScale={24} blurAmount={.07} saturation={125} aberrationIntensity={.35} elasticity={0} mode="standard" overLight={false} globalMousePos={{x:0,y:0}} mouseOffset={{x:0,y:0}} style={{position:'absolute',top:'50%',left:'50%',width:'100%',height:'100%'}}><span aria-hidden="true"/></LiquidGlass>;
+ },[host,size.width,size.height,size.radius]);
+ return <LiquidGlass key={size.width+'x'+size.height+'x'+size.radius} className="trip-liquid-material" cornerRadius={size.radius} padding="0px" displacementScale={24} blurAmount={.07} saturation={125} aberrationIntensity={.35} elasticity={0} mode="standard" overLight={false} globalMousePos={{x:0,y:0}} mouseOffset={{x:0,y:0}} style={{position:'absolute',top:'50%',left:'50%',width:'100%',height:'100%'}}><span aria-hidden="true"/></LiquidGlass>;
 }
 function remove(host,entry){entry.root.unmount();entry.layer.remove();host.classList.remove('react-glass-card');mounted.delete(host);}
 function refresh(){

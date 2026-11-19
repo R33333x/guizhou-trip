@@ -20,8 +20,8 @@ button,.external-button,.food-detail-actions a{transition:background-color 180ms
 }
 .trip-cover.gl-optics-ready .nav button,.trip-cover.gl-optics-ready .theme{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--glass-overlay)}
 .nav button small{color:var(--muted);opacity:1}
-:is(.nav button[aria-selected="true"],.nav button[aria-current="true"],.city-buttons button[aria-pressed="true"],.food-filters button[aria-pressed="true"]){border-color:var(--text);background:var(--glass-selected);box-shadow:inset 0 1px 1px var(--glass-sheen),0 3px 12px var(--shade);color:var(--text)}
-.trip-cover.gl-optics-ready .nav button:is([aria-selected="true"],[aria-current="true"]){background:var(--glass-selected);border-color:var(--text)}
+:is(.nav button[aria-selected="true"],.nav button[aria-current="true"],.city-buttons button[aria-pressed="true"],.food-filters button[aria-pressed="true"]){border-color:var(--glass-active-line);background:var(--glass-selected);box-shadow:inset 0 1px 1px var(--glass-sheen),0 3px 12px var(--shade);color:var(--text)}
+.trip-cover.gl-optics-ready .nav button:is([aria-selected="true"],[aria-current="true"]){background:var(--glass-selected);border-color:var(--glass-active-line)}
 .nav-days{border-color:var(--line)}
 .nav-days button[aria-selected="true"]{border-width:1px;background:var(--glass-selected);color:var(--text)}
 .nav button,.nav-tools button,.nav-days button{border-radius:16px}
@@ -40,14 +40,18 @@ button,.external-button,.food-detail-actions a{transition:background-color 180ms
 .gallery-button{position:relative;overflow:hidden;background:var(--glass-fill);border:1px solid var(--glass-line);border-radius:14px}
 .gallery-button img{display:block}
 .react-glass-card{position:relative;isolation:isolate;border-radius:14px!important;background:transparent!important;border:1px solid var(--glass-line)!important;box-shadow:inset 0 1px .5px var(--glass-sheen),0 4px 14px var(--shade)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-.react-glass-card>.react-glass-material{position:absolute;inset:0;display:block;padding:0;border-radius:inherit;pointer-events:none;z-index:-1;contain:layout style}
+.react-glass-card>.react-glass-material{position:absolute;inset:0;display:block;padding:0;border-radius:var(--material-radius,13px);overflow:hidden;pointer-events:none;z-index:-1;contain:layout style}
 .react-glass-material .relative{position:relative}.react-glass-material .pointer-events-none{pointer-events:none}.react-glass-material .mix-blend-overlay{mix-blend-mode:overlay}.react-glass-material .opacity-0{opacity:0}.react-glass-material .opacity-20{opacity:.2}.react-glass-material .opacity-100{opacity:1}
-.react-glass-material .trip-liquid-material{border-radius:inherit}
-.react-glass-material .trip-liquid-material>.glass{width:100%;height:100%;display:flex!important;border-radius:14px!important;background:linear-gradient(155deg,var(--glint),transparent 52%,var(--glass-edge));box-shadow:inset 0 1px 1px var(--glass-sheen),inset 0 -1px 1px var(--glass-edge)!important}
+.react-glass-material .trip-liquid-material{border-radius:inherit;opacity:.14}
+.react-glass-material .trip-liquid-material>.glass{width:100%;height:100%;display:flex!important;border-radius:inherit!important;background:linear-gradient(155deg,var(--glint),transparent 52%,var(--glass-edge));box-shadow:none!important}
 .react-glass-material .glass__warp{background:var(--glass-overlay)!important;-webkit-backdrop-filter:blur(4px) saturate(110%);backdrop-filter:blur(4px) saturate(110%)}
 .react-glass-material .trip-liquid-material>.glass>div{width:100%;height:100%}
 .react-glass-material>span{display:block}
-.react-glass-material>span[style*="mix-blend-mode"],.react-glass-material>div[style*="height"]{width:100%!important;height:100%!important;border-radius:14px!important;opacity:.14!important;padding:.65px!important;box-shadow:none!important}
+.react-glass-material>div[style*="height"]{width:100%!important;height:100%!important;border-radius:inherit!important;box-shadow:none!important}
+/* The host owns the rim. Upstream's two transformed mask rings otherwise
+   duplicate it and can leave a bright subpixel seam in WebKit. */
+.react-glass-material>span[style*="mix-blend-mode"],.react-glass-material>.bg-black{display:none!important}
+.react-glass-card:is([aria-pressed="true"],[aria-selected="true"]){border-color:var(--glass-active-line)!important}
 .overview-day.react-glass-card::before{z-index:1}
 .food-photo-dialog{background:var(--glass-dialog);color:var(--text);border:1px solid var(--glass-line);box-shadow:inset 0 1px 1px var(--glass-sheen),0 18px 60px var(--shade);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px)}
 .food-photo-dialog::backdrop{background:color-mix(in srgb,#232826 66%,transparent);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
@@ -57,15 +61,13 @@ button,.external-button,.food-detail-actions a{transition:background-color 180ms
 .lightbox button{color:#DAECF4;background:#DAECF414;border-color:#DAECF444}
 .toast{background:var(--text);color:var(--bg);border-radius:12px;box-shadow:0 8px 26px var(--shade)}
 .view:not([hidden]){animation:none}
-@media(hover:hover) and (pointer:fine){:is(.nav button,.city-buttons button,.external-button,.food-detail-actions a,.overview-day,.overview-stay):hover{background:var(--glass-selected);border-color:var(--text)}.gallery-button:hover img{transform:none}}
+@media(hover:hover) and (pointer:fine){:is(.nav button,.city-buttons button,.external-button,.food-detail-actions a,.overview-day,.overview-stay):hover{background:var(--glass-selected);border-color:var(--glass-active-line)}.gallery-button:hover img{transform:none}}
 @media(max-width:767px){.stay-intro{padding:20px}.food-detail-copy{padding:16px}.event-card{padding:13px 14px 16px;margin-left:4px}}
 @media(prefers-reduced-transparency:reduce){.glass-optics,.react-glass-material{display:none!important}.react-glass-card,:is(.nav button,.theme,.external-button,.food-map-fit,.food-detail-actions a,.food-photo-dialog,.food-dialog-head,.food-dialog-footer,.place-detail){background:var(--solid-panel)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}.lightbox{background:#232826}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}button:hover,.gallery-button:hover img{transform:none!important;scale:1!important}}
 
 /* Keep the close controls visible while a tall food photo scrolls. */
 .food-dialog-head.react-glass-card{position:sticky;top:0;z-index:3}
-/* A single quiet rim avoids the bright doubled edge on dark backgrounds. */
-.react-glass-material>span[style*="mix-blend-mode"]{padding:.65px!important;opacity:.10!important;box-shadow:none!important}
 @media(prefers-reduced-transparency:reduce){
  :is(.nav button,.theme,.overview-day,.overview-stay,.city-buttons button,.quick-tools button,.external-button,.reset-button,.address-copy,.food-detail-actions a,.food-map-fit,.food-filters button,.food-day-link button,.day-footer button,.lightbox button,.food-dialog-head button,.origin-field select,.food-distance-selects select,.leaflet-bar a,.food-photo-dialog,.food-dialog-head,.food-dialog-footer,.place-detail){background:var(--solid-panel)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
  .lightbox-top,.lightbox-bottom,.lightbox button{background:#232826!important;color:#DAECF4;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
