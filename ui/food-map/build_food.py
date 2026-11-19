@@ -19,11 +19,21 @@ if "id:'food'" not in s:
  s=s.replace("if(id==='weather')renderWeather();", "if(id==='weather')renderWeather();\n if(id==='food')initFood();",1)
  # Add a direct overview entry within the existing quick tools.
  s=s.replace('<div class="quick-tools"><button type="button" data-view="flights">','<div class="quick-tools"><button type="button" data-view="food">寻味贵州<small>贵阳 / 安顺 / 民宿周边</small></button><button type="button" data-view="flights">',1)
-replace_block('STYLES',(src/'food.css').read_text())
-replace_block('SECTION',(src/'food.html').read_text())
-replace_block('DIALOG','''<dialog class="food-photo-dialog" id="food-photo-dialog" aria-labelledby="food-photo-title"><div class="food-dialog-head"><div><h2 id="food-photo-title"></h2><p id="food-photo-subtitle"></p></div><button type="button" id="food-photo-close" aria-label="关闭美食图片">关闭 ×</button></div><img class="food-dialog-image" id="food-photo-full" alt=""><div class="food-dialog-footer"><span>看看图片，再选想吃的</span><a id="food-photo-source" target="_blank" rel="noopener noreferrer">单独打开图片 ↗</a></div></dialog>''')
+styles=(src/'food.css').read_text()
+if (src/'map-preview.css').exists():
+ styles+='\n'+(src/'map-preview.css').read_text()
+ if 'vendor/leaflet/leaflet.css' not in s:
+  s=s.replace('</head>','<link rel="stylesheet" href="vendor/leaflet/leaflet.css">\n</head>',1)
+replace_block('STYLES',styles)
+section=(src/'food.html').read_text()
+if (src/'map-preview.html').exists():
+ section=re.sub(r'<!-- BEGIN LIVE_MAP -->[\s\S]*?<!-- END LIVE_MAP -->',lambda _:'<!-- BEGIN LIVE_MAP -->\n'+(src/'map-preview.html').read_text()+'\n<!-- END LIVE_MAP -->',section,count=1)
+replace_block('SECTION',section)
+replace_block('DIALOG','''<dialog class="food-photo-dialog" id="food-photo-dialog" aria-labelledby="food-photo-title"><div class="food-dialog-head"><div><h2 id="food-photo-title"></h2><p id="food-photo-subtitle" hidden></p></div><button type="button" id="food-photo-close" aria-label="关闭美食图片">关闭 ×</button></div><img class="food-dialog-image" id="food-photo-full" alt=""><div class="food-dialog-footer"><a id="food-photo-source" target="_blank" rel="noopener noreferrer">单独打开图片 ↗</a></div></dialog>''')
 data=json.loads((src/'food-data.json').read_text())
-js='const FOOD_SHOPS='+json.dumps(data['shops'],ensure_ascii=False,separators=(',',':'))+';\n'+(src/'food.js').read_text()
+js='const FOOD_ENRICHMENT='+json.dumps(json.loads((src/'food-enrichment.json').read_text())['shops'],ensure_ascii=False,separators=(',',':'))+';\nconst FOOD_SHOPS='+json.dumps(data['shops'],ensure_ascii=False,separators=(',',':'))+';\n'+(src/'food.js').read_text()
+if (src/'map-preview-data.json').exists():
+ js+='\nconst FOOD_MAP_PREVIEW='+json.dumps(json.loads((src/'map-preview-data.json').read_text()),ensure_ascii=False,separators=(',',':'))+';\n'+(src/'map-preview.js').read_text()
 replace_block('RUNTIME',js.replace('</script','<\\/script'))
 # Keep a dedicated hash for opening the review without altering the default home.
 if "location.hash==='#food'" not in s:

@@ -1,0 +1,6 @@
+.weather-links{display:flex;gap:8px;flex-wrap:wrap}
+.weather-card-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.weather-location{font-size:11px;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+.weather-summary{align-items:flex-start}
+.weather-range small{font-size:15px}
+@media(max-width:767px){.weather-links{width:100%;margin-top:12px}.weather-links a{flex:1}.weather-summary{display:block}.weather-location{font-size:10px;padding:1px 6px}}

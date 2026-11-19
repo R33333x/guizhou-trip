@@ -1,27 +1,7 @@
 <section class="view" id="food" role="tabpanel" aria-labelledby="tab-food" tabindex="0" hidden>
- <div class="page-head"><div><p class="page-kicker">跟着行程 · 寻味贵州</p><h2>这一站，吃什么？</h2></div><p class="page-desc">在城里逛吃，在山野归来后吃顿热饭。</p></div>
- <div class="food-intro-grid">
-  <article class="card food-atlas" aria-labelledby="food-atlas-title">
-   <div class="food-atlas-head"><h3 id="food-atlas-title">三片地方，一张吃饭地图</h3><span>点区域，看看附近想吃什么</span></div>
-   <svg class="food-area-map" viewBox="0 0 640 310" role="group" aria-label="美食区域示意图，点击安顺、贵阳市内或民宿周边切换店铺">
-    <path class="food-map-hill" d="M-20 270 55 145 100 208 154 100 220 206 265 142 322 248 378 165 427 210 482 108 545 187 595 133 670 260V330H-20Z"/>
-    <path class="food-map-road" d="M122 165C230 58 358 52 473 108S567 205 474 244"/>
-    <path class="food-map-river" d="M371-20Q319 70 363 147T378 330"/>
-    <text class="food-map-orient" x="29" y="35">N ↑</text>
-    <g class="food-map-region" data-food-region="anshun" role="button" tabindex="0" aria-label="安顺，17家店" aria-pressed="false"><circle class="food-map-halo" cx="122" cy="165" r="35"/><circle class="food-map-dot" cx="122" cy="165" r="10"/><text x="122" y="110" text-anchor="middle" class="food-map-name">安顺</text><text x="122" y="207" text-anchor="middle" class="food-map-detail">黄果树 · 铜鼓荡</text><text x="122" y="230" text-anchor="middle" class="food-map-detail">17 家想吃的店</text></g>
-    <g class="food-map-region" data-food-region="guiyang" role="button" tabindex="0" aria-label="贵阳市内，9家店" aria-pressed="true"><circle class="food-map-halo" cx="473" cy="108" r="35"/><circle class="food-map-dot" cx="473" cy="108" r="10"/><text x="473" y="56" text-anchor="middle" class="food-map-name">贵阳市内</text><text x="473" y="153" text-anchor="middle" class="food-map-detail">抵达日 · 黔灵山那天</text><text x="473" y="176" text-anchor="middle" class="food-map-detail">9 家想吃的店</text></g>
-    <g class="food-map-region" data-food-region="huaxi" role="button" tabindex="0" aria-label="民宿周边花溪片区，3家店" aria-pressed="false"><circle class="food-map-halo" cx="474" cy="244" r="28"/><circle class="food-map-dot" cx="474" cy="244" r="8"/><text x="397" y="247" text-anchor="end" class="food-map-name">民宿周边</text><text x="397" y="273" text-anchor="end" class="food-map-detail">花溪片区 · 3 家</text><text x="516" y="267" class="food-map-detail">青岩 · 禧竹山房</text></g>
-   </svg>
-   <p class="food-map-caption">区域关系示意，不按比例。店铺位置与路线请点卡片中的「地图找店」。</p>
-  </article>
-  <aside class="card food-sharing"><p class="food-eyebrow">分头去吃，回院子再分享</p><h3>各自尽兴，也能一起尝鲜</h3><p>我们有十几个人，吃饭可以自由分成小组，也可以各自去吃自己最想吃的。小店座位有限，不必每一顿都挤在同一家。</p><p>出发前在群里说一声去哪家，看看有没有想同行的。吃到喜欢的也可以在群里分享，问问大家要不要捎一份，打包带回民宿，晚上再一起尝尝。</p><p class="food-sharing-foot">自由吃饭，按约定时间集合；打包份量和取餐时间在群里说好。</p></aside>
- </div>
+ <div class="page-head"><h2>美食地图</h2></div>
  <div class="food-region-controls city-buttons" id="food-regions" role="group" aria-label="选择美食区域"></div>
- <div class="food-region-heading"><div><p class="food-eyebrow" id="food-region-days"></p><h3 id="food-region-title"></h3></div><button type="button" class="food-reset external-button" id="food-reset">重置筛选</button></div>
- <p class="food-region-note" id="food-region-note"></p>
- <div class="food-search-row"><label class="food-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">搜索当前区域的店名、菜品、特点或地址</span><input type="search" id="food-search" placeholder="搜店名、菜品、口味…" autocomplete="off"></label><div class="food-filters" id="food-filters" role="group" aria-label="按用餐类型筛选"><button type="button" class="external-button" data-food-meal="all" aria-pressed="true">全部</button><button type="button" class="external-button" data-food-meal="正餐" aria-pressed="false">正餐</button><button type="button" class="external-button" data-food-meal="小吃" aria-pressed="false">小吃</button></div></div>
- <div class="food-results-head"><p id="food-result-count" role="status" aria-live="polite"></p><span>图可放大 · 地址可复制</span></div>
- <div class="food-grid" id="food-grid"></div>
- <div class="food-empty" id="food-empty" hidden><h3>这一片暂时没找到</h3><p>换个关键词，或切到其他区域看看。</p><button type="button" class="external-button" id="food-clear-search">清除筛选</button></div>
- <p class="source-note">店名、分类、特点、地址、备注与配图来自大家整理的美食清单。价格与营业时间是清单中的参考信息，出发前再核对；地址尚未填写的店可按店名在地图中搜索。</p>
+<!-- BEGIN LIVE_MAP -->
+<!-- END LIVE_MAP -->
+ <aside class="card food-sharing food-sharing-compact"><h3>分头去吃，回院子再分享</h3><p>吃饭可以分组或自由行动，在群里约同伴。吃到喜欢的，也可以问问谁想尝，打包带回民宿一起吃；记得按时集合。</p></aside>
 </section>

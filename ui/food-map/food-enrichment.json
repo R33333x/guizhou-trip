@@ -1,0 +1,229 @@
+{
+  "retrieved": "2026-11-18",
+  "sources": {
+    "appleGuide": "https://maps.apple.com/guides?user=CgbluLjnlKgSDQiXxAMQmuLc8uik%2FgESDQiXxAMQgr6tw%2Bek%2FgESDQiXxAMQnMnyquik%2FgESDQiXxAMQ1Lqi6q%2Bv%2FgESDQiXxAMQjsfE3q2r%2FgESDQiXxAMQg6OJw%2Bek%2FgESDQiXxAMQ7qL2gI%2Bw%2FgESDQiXxAMQ%2FPOtuuik%2FgESDQiXxAMQweO5mZ6z%2FgESDQiXxAMQlqKDu%2Bik%2FgESDQiXxAMQmI%2Fa5Z6z%2FgESDQiXxAMQsZmOpp20%2FgESDQiXxAMQz5XB48Kw%2FgESDQiXxAMQ06%2BF1eek%2FgESDQiXxAMQlIru2eek%2FgESDQiXxAMQ7sjr3eik%2FgESDQiXxAMQqMu01uik%2FgESDQiXxAMQmPnQxNK0%2FgESDQiXxAMQwZud57Gy%2FgESDQiXxAMQ36LTqoKt%2FgESDQiXxAMQ1c3xqZGq%2FgESDQiXxAMQ1Mqxmeik%2FgESDQiXxAMQ9eHB9eik%2FgESDQiXxAMQ5Yr8%2Buek%2FgESDQiXxAMQw7%2Fu9dOv%2FgESDQiXxAMQsN7Lr9Gs%2FgESDQiXxAMQ3t%2FOxeSI%2FgESDQiXxAMQtOzQguik%2FgESDQiXxAMQwrSPxuSI%2FgESDQiXxAMQirHC%2FYat%2FgE%3D",
+    "appleDirectionsDocs": "https://developer.apple.com/documentation/mapkit/unified-map-urls",
+    "baiduDirectionsDocs": "https://lbsyun.baidu.com/docs/webapi?title=mapadjustment/uri/web",
+    "dianpingGuiyang": "https://www.dianping.com/guiyang",
+    "dianpingAnshun": "https://www.dianping.com/anshun"
+  },
+  "shops": {
+    "food-5": {
+      "description": "一边烤一边聊，把小肠烤到边缘微焦，适合爱烧烤的几个人围坐慢慢吃。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-6": {
+      "description": "不急着选一家坐满，一路看看肉饼、裹卷和凉粉，小组分头买，想尝的都能分上一口。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-7": {
+      "description": "先咬一口脆皮，再吃热乎的肉馅。买上一份分着尝，还能给下一家留点胃口。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-8": {
+      "description": "薄薄的裹卷包进馅料，一口一卷。按清单，不吃辣可以从番茄肉末味试起。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-9": {
+      "description": "想换一种口感，可以把凉面加入这一餐，再和同行的人分一份裹卷尝尝。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-10": {
+      "description": "热热的小锅凉粉配腌菜酸香，再加一份豆腐皮蘸辣椒，是清单里想尝的街巷滋味。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-11": {
+      "description": "想吃清汤鲜牛肉的可以组一桌：涮鲜牛肉、牛黄筋，再各自调一碟蘸水。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F9268BBAE46E&_provider=57879",
+      "dianpingId": "1963313623"
+    },
+    "food-12": {
+      "description": "糍粑辣椒裹着牛肉先吃干锅，吃完还可加汤煮菜。喜欢香辣口的可以留意这一家。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F9682554D15F&_provider=57879",
+      "dianpingId": "962608935"
+    },
+    "food-13": {
+      "description": "热铁板上慢慢煎出香味，肉菜分着点，想多尝几样也可以按清单问问能否点半份。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F9931CE74DC1&_provider=57879",
+      "dianpingId": "1120083531"
+    },
+    "food-14": {
+      "description": "把洋芋粑、豆腐和喜欢的配菜放进烙锅，边烙边分着吃；适合不赶时间的晚饭。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-15": {
+      "description": "想吃一份热乎的砂锅凉粉，可以先把它加入备选，和附近的小吃搭着尝。店名与具体门店待核对。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null,
+      "locationNote": "指南有“小芳砂锅凉粉（总店）”，清单写“小方”，门店尚待确认，暂不关联坐标。",
+      "blurb": "砂锅凉粉，可搭配小吃。"
+    },
+    "food-16": {
+      "description": "红烧牛肉配粉或面，清炖牛肉配爽滑米粉；早上来一碗热汤，给接下来的行程垫垫胃。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F9267B3B8514&_provider=57879",
+      "dianpingId": "17545307"
+    },
+    "food-17": {
+      "description": "炸得酥脆的粑粑，遇上柔软米糊和苏子香，是很有辨识度的安顺吃法，适合几个人分一份尝鲜。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F9267AA157D3&_provider=57879",
+      "dianpingId": "77686914"
+    },
+    "food-18": {
+      "description": "炸起泡的猪脚吸满汤汁，软糯中带着酸汤香；也可问问双拼，把三烧牛肉一起尝到。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F9842C704ACF&_provider=57879",
+      "dianpingId": "845557608"
+    },
+    "food-19": {
+      "description": "清单想尝的是嫩鱼片火锅，几个人围坐吃顿正餐；酸菜汤圆也可以问问当天有没有。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": "1025346753389176"
+    },
+    "food-20": {
+      "description": "想要一顿热汤配野菜，可以留意豆米锅这个方向；具体锅底、配菜和门店位置出发前再确认。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null,
+      "blurb": "豆米火锅配野菜。"
+    },
+    "food-21": {
+      "description": "热乎软润的包子，豆沙和鲜肉各来一点，甜口咸口交换着吃，适合当一顿轻松早餐。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-25": {
+      "description": "酸汤配鲜切牛肉，适合回到花溪后几个人围坐吃正餐。国宾府店的位置还需单独核对。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null,
+      "locationNote": "指南中的牛鼎世家位于孟溪路杨柳塘，与清单国宾府店地址不同，暂不采用其坐标和点评链接。",
+      "blurb": "酸汤涮鲜切牛肉。"
+    },
+    "food-26": {
+      "description": "想换成烤鸡口味，可以把这家作为花溪备选。几个人分一只的吃法很方便，具体口味、份量与打包方式到店再问。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null,
+      "blurb": "花溪烤鸡，可分着吃或打包。"
+    },
+    "food-27": {
+      "description": "回花溪想吃得简单一点，可以考虑一碗牛肉粉。汤底、加料和辣度按当天菜单挑，吃完再慢慢回院子。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null,
+      "blurb": "牛肉粉，适合早餐或简餐。"
+    },
+    "food-47": {
+      "description": "酸汤锅里煮夺夺粉，几个人围坐分着点配菜；想尝贵州酸香口的，可以把它放进正餐备选。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-48": {
+      "description": "豆米煮进热汤里，绵软的豆子很适合拌饭。公开评价提到腊肉锅底、软哨和酥肉，想吃暖乎下饭的一餐可以看看。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F999E32E71C1&_provider=57879",
+      "dianpingId": "1477231415",
+      "blurb": "豆米软糯，汤汁拌饭；可搭腊肉、软哨或酥肉。"
+    },
+    "food-49": {
+      "description": "用一锅酸汤涮牛肉，酸香开胃；公开评价还提到脆哨洋芋和冰豆浆，可以作为点菜时的参考。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F95ADBD1238E&_provider=57879",
+      "dianpingId": "696599367",
+      "blurb": "酸汤涮牛肉，也可试试脆哨洋芋。"
+    },
+    "food-50": {
+      "description": "一条街上慢慢找想吃的：蛋包洋芋、冰浆、糍粑各尝一点。这里是小吃街，适合分头买、少量多样。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F980F01D916E&_provider=57879",
+      "dianpingId": "1982095547",
+      "blurb": "蛋包洋芋、冰浆、糍粑，少量多样。"
+    },
+    "food-51": {
+      "description": "酱香或麻辣的肉串烤得热乎，蘸水又添一层滋味；想边走边吃、或者给夜宵加点烤串，可以留意。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F926874B79FC&_provider=57879",
+      "dianpingId": "21690173",
+      "blurb": "酱香、麻辣肉串，搭配蘸水。"
+    },
+    "food-52": {
+      "description": "先喝一口浓汤，再吃肠旺面；按清单记下旁边巷子里的“贵州天妇罗”，给小吃搭配留点余地。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": null
+    },
+    "food-53": {
+      "description": "油润糯米饭配酸萝卜等小料，软糯里带一点爽脆。清单特别提醒只有早上才有，想吃记得早点安排。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F97AFD489D54&_provider=57879",
+      "dianpingId": "926456118",
+      "locationNote": "保留清单原名；公开指南名称为“六广门毛阿姨糯米饭（人剧店）”，地址一致。",
+      "blurb": "糯米饭配酸萝卜等小料。"
+    },
+    "food-54": {
+      "description": "一碗牛肉粉先尝汤，再嗦滑嫩米粉；清单最惦记的就是浓郁汤底，适合想吃热乎汤粉的时候。",
+      "descriptionType": "editorial",
+      "sourceLabel": "清单编辑推荐",
+      "sourceUrl": null,
+      "dianpingId": "22024993"
+    },
+    "food-55": {
+      "description": "板筋带着嚼劲，拌上热米饭吃得踏实。公开评价里常提到板筋的口感，适合想找一份简餐的人。",
+      "descriptionType": "public-summary",
+      "sourceLabel": "参考公开评价整理",
+      "sourceUrl": "https://maps.apple.com/place?place-id=H2710I3F9268E57311A&_provider=57879",
+      "dianpingId": "80033810",
+      "blurb": "板筋带嚼劲，香辣下饭。"
+    }
+  }
+}

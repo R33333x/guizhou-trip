@@ -1,0 +1,24 @@
+{
+  "original": {
+    "label": "原配色 · 日间 D / 夜间 B",
+    "description": "沿用先前确认的蓝绿配色。",
+    "light": {
+      "bg": "#DAECF4",
+      "text": "#232826",
+      "muted": "#232826",
+      "accent": "#509EAB",
+      "primary": "#558F14",
+      "alternate": "#509EAB",
+      "seed": "#232826"
+    },
+    "dark": {
+      "bg": "#232826",
+      "text": "#DAECF4",
+      "muted": "#DAECF4",
+      "accent": "#509EAB",
+      "primary": "#558F14",
+      "alternate": "#509EAB",
+      "seed": "#DAECF4"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+ <article class="card food-live-atlas" aria-label="美食地图与店铺">
+  <div class="food-live-map-shell"><div id="food-live-map" aria-label="美食地图，可拖动及双指缩放" tabindex="0"></div><button type="button" id="food-map-fit" class="food-map-fit">查看本区 ↗</button><div class="food-map-loading" id="food-map-loading" role="status">加载地图…</div><div class="food-map-legend"><span>● 正餐</span><span>● 小吃</span><span>⌂ 民宿</span></div></div>
+  <div class="food-filters" role="group" aria-label="按用餐类型筛选"><button type="button" class="external-button" data-food-meal="all" aria-pressed="true">全部</button><button type="button" class="external-button" data-food-meal="正餐" aria-pressed="false">正餐</button><button type="button" class="external-button" data-food-meal="小吃" aria-pressed="false">小吃</button></div>
+  <p class="food-map-network" id="food-map-network" role="status" hidden>地图加载失败。<button type="button" id="food-map-retry">重试</button></p>
+  <div class="food-list-heading"><h3 id="food-region-title"></h3><p id="food-result-count" role="status" aria-live="polite"></p></div>
+  <div class="food-grid" id="food-grid" role="group" aria-label="店铺列表"></div>
+  <div class="food-empty" id="food-empty" hidden><p>暂无这类店铺</p><button type="button" id="food-clear-filters">查看全部</button></div>
+  <div class="food-map-selected" id="food-map-selected" aria-live="polite" aria-atomic="false"></div>
+  <details class="food-distance-panel" open><summary>比较两家店的距离</summary><div class="food-distance"><div class="food-distance-selects"><label>从<select id="food-distance-from" aria-label="步行路线起点"></select></label><span aria-hidden="true">→</span><label>到<select id="food-distance-to" aria-label="步行路线终点"></select></label></div><div class="food-distance-result"><p id="food-distance-result" role="status" aria-live="polite"></p><div id="food-distance-routes"></div></div><p class="food-distance-note">直线距离，实际步行路线请查看导航。</p></div></details>
+ </article>

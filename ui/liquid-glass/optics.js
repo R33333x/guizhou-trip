@@ -63,18 +63,18 @@ function initBotanicalOptics(){
    if(this.failed)return;
    if(reduceTransparency.matches){this.canvas.hidden=true;this.host.classList.remove('gl-optics-ready');return;}
    const hostRect=this.host.getBoundingClientRect();if(hostRect.bottom<0||hostRect.top>innerHeight||hostRect.width===0||hostRect.height===0)return;
-   const palette=document.documentElement.dataset.palette==='dark'?'dark':'light';const asset=assets[palette][(this.key==='main'?'main':'cover')+(mobile.matches?'Mobile':'')];if(this.asset!==asset){this.asset=asset;this.image.src=asset;return;}
+   const palette=document.documentElement.dataset.palette==='dark'?'dark':'light',look=document.documentElement.dataset.look||'original',colors=getComputedStyle(document.documentElement);const asset=assets[look][palette][(this.key==='main'?'main':'cover')+(mobile.matches?'Mobile':'')];if(this.asset!==asset){this.asset=asset;this.image.src=asset;return;}
    if(!this.image.complete||!this.image.naturalWidth)return;
    this.canvas.hidden=false;
    const sliceTop=this.key==='main'?Math.max(0,Math.floor(-hostRect.top)-32):0;
    const w=hostRect.width,h=this.key==='main'?Math.min(hostRect.height-sliceTop,innerHeight+64):hostRect.height,dpr=Math.min(devicePixelRatio||1,3);
    this.canvas.style.top=sliceTop+'px';this.canvas.style.height=h+'px';
    const gl=this.gl,L=this.locations;
-   if(w!==this.w||h!==this.h||dpr!==this.dpr||sliceTop!==this.sliceTop||palette!==this.palette||this.textureDirty){
-    this.w=w;this.h=h;this.dpr=dpr;this.sliceTop=sliceTop;this.palette=palette;this.textureDirty=false;
+   if(w!==this.w||h!==this.h||dpr!==this.dpr||sliceTop!==this.sliceTop||palette!==this.palette||look!==this.look||this.textureDirty){
+    this.w=w;this.h=h;this.dpr=dpr;this.sliceTop=sliceTop;this.palette=palette;this.look=look;this.textureDirty=false;
     this.canvas.width=Math.round(w*dpr);this.canvas.height=Math.round(h*dpr);this.source.width=this.canvas.width;this.source.height=this.canvas.height;
     const ctx=this.source.getContext('2d'),scale=this.source.width/this.image.naturalWidth,iw=this.source.width,ih=this.image.naturalHeight*scale;
-    ctx.fillStyle=palette==='dark'?'#232826':'#DAECF4';ctx.fillRect(0,0,this.source.width,this.source.height);ctx.globalAlpha=this.key==='main'?.36:1;
+    ctx.fillStyle=colors.getPropertyValue('--bg').trim();ctx.fillRect(0,0,this.source.width,this.source.height);ctx.globalAlpha=this.key==='main'?.36:1;
     if(this.key==='main'){
      // Match CSS repeat-y at the same scale and origin, including deep scroll.
      const origin=(48-sliceTop)*dpr,first=origin+Math.floor(-origin/ih)*ih;
@@ -87,16 +87,15 @@ function initBotanicalOptics(){
    const boxes=new Float32Array(80),radii=new Float32Array(20);let count=0;
    this.host.querySelectorAll(this.selector).forEach(surface=>{
     const rect=surface.getBoundingClientRect();if(!rect.width||!rect.height||rect.bottom<0||rect.top>innerHeight||count>=20||surface.closest('.gallery-button'))return;
-    const isCounter=surface.classList.contains('count-unit'),mobileInset=mobile.matches?6:10,inset=isCounter?mobileInset:0;
-    boxes.set([rect.left-hostRect.left-inset,rect.top-hostRect.top-sliceTop-(isCounter?4:0),rect.width+inset*2,rect.height+(isCounter?10:0)],count*4);
-    radii[count]=isCounter?(mobile.matches?14:18):Math.min(rect.width,rect.height,2*(parseFloat(getComputedStyle(surface).borderRadius)||14)*rect.width/surface.offsetWidth)/2;count++;
+    boxes.set([rect.left-hostRect.left,rect.top-hostRect.top-sliceTop,rect.width,rect.height],count*4);
+    radii[count]=Math.min(rect.width,rect.height,2*(parseFloat(getComputedStyle(surface).borderRadius)||14)*rect.width/surface.offsetWidth)/2;count++;
    });
-   gl.useProgram(this.program);gl.uniform3f(L.u_tint,...(palette==='dark'?[35/255,40/255,38/255]:[218/255,236/255,244/255]));gl.uniform4fv(L['u_boxes[0]'],boxes);gl.uniform1fv(L['u_radii[0]'],radii);gl.uniform1i(L.u_count,count);gl.uniform2f(L.u_pointer,...(reduceMotion.matches?[-1000,-1000]:[this.pointer[0],this.pointer[1]-sliceTop]));gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,6);this.host.classList.add('gl-optics-ready');
+   gl.useProgram(this.program);const tint=colors.getPropertyValue('--bg').trim();gl.uniform3f(L.u_tint,...[1,3,5].map(i=>parseInt(tint.slice(i,i+2),16)/255));gl.uniform4fv(L['u_boxes[0]'],boxes);gl.uniform1fv(L['u_radii[0]'],radii);gl.uniform1i(L.u_count,count);gl.uniform2f(L.u_pointer,...(reduceMotion.matches?[-1000,-1000]:[this.pointer[0],this.pointer[1]-sliceTop]));gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,6);this.host.classList.add('gl-optics-ready');
   }
  }
- instances.push(new GlassScene(document.querySelector('.trip-cover'),'.count-unit,.nav button,.theme','cover'));
- instances.push(new GlassScene(document.querySelector('#main-content'),'.card,.overview-day,.quick-tools button,.city-buttons button,.route-panel,.map-fold,.reset-button,.address-copy,.external-button,.day-footer button','main'));
- new MutationObserver(()=>requestRender()).observe(document.documentElement,{attributes:true,attributeFilter:['data-palette']});
+ instances.push(new GlassScene(document.querySelector('.trip-cover'),'.nav button,.theme','cover'));
+ instances.push(new GlassScene(document.querySelector('#main-content'),'.card:not(.food-live-atlas),.alert,.event-card,.stay-intro,.food-detail-copy,.map-fold,.route-panel,.daily-kit,.overview-day,.overview-stay,.city-buttons button,.reset-button,.address-copy,.external-button,.day-footer button,.food-filters button','main'));
+ new MutationObserver(()=>requestRender()).observe(document.documentElement,{attributes:true,attributeFilter:['data-palette','data-look']});
  window.addEventListener('resize',()=>requestRender());window.addEventListener('scroll',()=>requestRender(),{passive:true});document.addEventListener('visibilitychange',()=>{if(document.hidden){if(pending)cancelAnimationFrame(pending);pending=0;animateUntil=0;}else requestRender();});
  for(const preference of [reduceMotion,reduceTransparency,mobile])preference.addEventListener('change',()=>requestRender());window.addEventListener('pageshow',()=>requestRender());requestRender();
 }

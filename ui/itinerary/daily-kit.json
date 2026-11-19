@@ -1,0 +1,111 @@
+{
+  "1": [
+    {
+      "id": "id",
+      "title": "身份证"
+    },
+    {
+      "id": "phone",
+      "title": "手机、充电宝"
+    },
+    {
+      "id": "layers",
+      "title": "保暖外套"
+    },
+    {
+      "id": "umbrella",
+      "title": "雨伞"
+    },
+    {
+      "id": "medicine",
+      "title": "个人常用药"
+    }
+  ],
+  "2": [
+    {
+      "id": "id",
+      "title": "身份证"
+    },
+    {
+      "id": "shoes",
+      "title": "防滑登山鞋"
+    },
+    {
+      "id": "raincoat",
+      "title": "雨衣"
+    },
+    {
+      "id": "backpack",
+      "title": "登山背包"
+    },
+    {
+      "id": "water",
+      "title": "饮水、少量路餐"
+    },
+    {
+      "id": "phone",
+      "title": "手机、充电宝"
+    },
+    {
+      "id": "layers",
+      "title": "保暖防风外套"
+    },
+    {
+      "id": "socks",
+      "title": "备用干袜"
+    },
+    {
+      "id": "light",
+      "title": "手电筒或头灯",
+      "optional": true
+    }
+  ],
+  "3": [
+    {
+      "id": "id",
+      "title": "身份证"
+    },
+    {
+      "id": "shoes",
+      "title": "舒适防滑鞋"
+    },
+    {
+      "id": "rain",
+      "title": "雨衣或雨伞"
+    },
+    {
+      "id": "backpack",
+      "title": "轻便背包"
+    },
+    {
+      "id": "water",
+      "title": "饮水"
+    },
+    {
+      "id": "phone",
+      "title": "手机、充电宝"
+    }
+  ],
+  "4": [
+    {
+      "id": "id",
+      "title": "身份证"
+    },
+    {
+      "id": "phone",
+      "title": "手机、充电宝"
+    },
+    {
+      "id": "luggage",
+      "title": "行李、随身物品"
+    },
+    {
+      "id": "layers",
+      "title": "保暖外套"
+    },
+    {
+      "id": "umbrella",
+      "title": "雨伞"
+    }
+  ]
+}

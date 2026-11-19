@@ -1,0 +1,181 @@
+{
+  "place": "贵阳 / 安顺",
+  "source": "中国天气网",
+  "url": "https://www.weather.com.cn/weather15d/101260101.shtml",
+  "issued": "2026-11-19T11:30:00+08:00",
+  "checked": "2026-11-19",
+  "locations": [
+    {
+      "id": "101260101",
+      "name": "贵阳",
+      "url": "https://www.weather.com.cn/weather15d/101260101.shtml",
+      "source": "中国天气网",
+      "forecastRun": "2026111908",
+      "issued": "2026-11-19T11:30:00+08:00",
+      "sourceSha256": "f9a013dad7b355b9d6e6c599e9edef40b52f3adb75c22964da31fb6d3602e0d5",
+      "days": [
+        {
+          "date": "2026-11-26",
+          "condition": "晴转多云",
+          "high": 18,
+          "low": 4,
+          "wind": "南风 · 小于3级"
+        },
+        {
+          "date": "2026-11-27",
+          "condition": "多云转晴",
+          "high": 17,
+          "low": 7,
+          "wind": "西南风转北风 · 小于3级"
+        },
+        {
+          "date": "2026-11-28",
+          "condition": "阴",
+          "high": 16,
+          "low": 7,
+          "wind": "东北风转东南风 · 小于3级"
+        },
+        {
+          "date": "2026-11-29",
+          "condition": "雨",
+          "high": 18,
+          "low": 13,
+          "wind": "南风转东南风 · 小于3级"
+        },
+        {
+          "date": "2026-11-30",
+          "condition": "雨",
+          "high": 19,
+          "low": 14,
+          "wind": "南风 · 3-4级"
+        },
+        {
+          "date": "2026-12-01",
+          "condition": "雨转多云",
+          "high": 17,
+          "low": 9,
+          "wind": "西北风转北风 · 3-4级转小于3级"
+        },
+        {
+          "date": "2026-12-02",
+          "condition": "多云转阴",
+          "high": 19,
+          "low": 11,
+          "wind": "南风 · 小于3级"
+        },
+        {
+          "date": "2026-12-03",
+          "condition": "雨",
+          "high": 15,
+          "low": 12,
+          "wind": "南风 · 小于3级"
+        }
+      ]
+    },
+    {
+      "id": "101260301",
+      "name": "安顺",
+      "url": "https://www.weather.com.cn/weather15d/101260301.shtml",
+      "source": "中国天气网",
+      "forecastRun": "2026111908",
+      "issued": "2026-11-19T11:30:00+08:00",
+      "sourceSha256": "61acf12a36052c123b606e48b20bdbbcd63f357a7045c10f0a811c289eb1fc19",
+      "days": [
+        {
+          "date": "2026-11-26",
+          "condition": "晴转多云",
+          "high": 15,
+          "low": 3,
+          "wind": "西南风转南风 · 小于3级"
+        },
+        {
+          "date": "2026-11-27",
+          "condition": "阴",
+          "high": 15,
+          "low": 6,
+          "wind": "西南风转北风 · 小于3级"
+        },
+        {
+          "date": "2026-11-28",
+          "condition": "多云",
+          "high": 15,
+          "low": 6,
+          "wind": "北风转东南风 · 小于3级"
+        },
+        {
+          "date": "2026-11-29",
+          "condition": "雨",
+          "high": 17,
+          "low": 12,
+          "wind": "西南风转南风 · 3-4级转小于3级"
+        },
+        {
+          "date": "2026-11-30",
+          "condition": "雨",
+          "high": 17,
+          "low": 11,
+          "wind": "西南风转南风 · 4-5级"
+        },
+        {
+          "date": "2026-12-01",
+          "condition": "雨转多云",
+          "high": 16,
+          "low": 7,
+          "wind": "北风 · 3-4级转小于3级"
+        },
+        {
+          "date": "2026-12-02",
+          "condition": "晴转阴",
+          "high": 16,
+          "low": 10,
+          "wind": "南风 · 小于3级"
+        },
+        {
+          "date": "2026-12-03",
+          "condition": "雨",
+          "high": 16,
+          "low": 11,
+          "wind": "南风 · 3-4级转小于3级"
+        }
+      ]
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-11-27",
+      "condition": "多云转晴",
+      "high": 17,
+      "low": 7,
+      "wind": "西南风转北风 · 小于3级",
+      "place": "贵阳",
+      "sourceId": "101260101"
+    },
+    {
+      "date": "2026-11-28",
+      "condition": "多云",
+      "high": 15,
+      "low": 6,
+      "wind": "北风转东南风 · 小于3级",
+      "place": "安顺",
+      "sourceId": "101260301"
+    },
+    {
+      "date": "2026-11-29",
+      "condition": "雨",
+      "high": 18,
+      "low": 13,
+      "wind": "南风转东南风 · 小于3级",
+      "place": "贵阳",
+      "sourceId": "101260101"
+    },
+    {
+      "date": "2026-11-30",
+      "condition": "雨",
+      "high": 19,
+      "low": 14,
+      "wind": "南风 · 3-4级",
+      "place": "贵阳",
+      "sourceId": "101260101"
+    }
+  ]
+}

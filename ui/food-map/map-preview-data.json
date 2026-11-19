@@ -1,0 +1,487 @@
+{
+  "guideName": "常用",
+  "guidePlaceCount": 30,
+  "guideUrl": "https://maps.apple.com/guides?user=CgbluLjnlKgSDQiXxAMQmuLc8uik%2FgESDQiXxAMQgr6tw%2Bek%2FgESDQiXxAMQnMnyquik%2FgESDQiXxAMQ1Lqi6q%2Bv%2FgESDQiXxAMQjsfE3q2r%2FgESDQiXxAMQg6OJw%2Bek%2FgESDQiXxAMQ7qL2gI%2Bw%2FgESDQiXxAMQ%2FPOtuuik%2FgESDQiXxAMQweO5mZ6z%2FgESDQiXxAMQlqKDu%2Bik%2FgESDQiXxAMQmI%2Fa5Z6z%2FgESDQiXxAMQsZmOpp20%2FgESDQiXxAMQz5XB48Kw%2FgESDQiXxAMQ06%2BF1eek%2FgESDQiXxAMQlIru2eek%2FgESDQiXxAMQ7sjr3eik%2FgESDQiXxAMQqMu01uik%2FgESDQiXxAMQmPnQxNK0%2FgESDQiXxAMQwZud57Gy%2FgESDQiXxAMQ36LTqoKt%2FgESDQiXxAMQ1c3xqZGq%2FgESDQiXxAMQ1Mqxmeik%2FgESDQiXxAMQ9eHB9eik%2FgESDQiXxAMQ5Yr8%2Buek%2FgESDQiXxAMQw7%2Fu9dOv%2FgESDQiXxAMQsN7Lr9Gs%2FgESDQiXxAMQ3t%2FOxeSI%2FgESDQiXxAMQtOzQguik%2FgESDQiXxAMQwrSPxuSI%2FgESDQiXxAMQirHC%2FYat%2FgE%3D",
+  "retrieved": "2026-11-18",
+  "source": "User-shared Apple Maps guide; Chinese POIs attributed to Amap",
+  "sourceCoordinateSystem": "GCJ-02",
+  "basemapCoordinateSystem": "WGS84",
+  "conversion": "Iterative inverse GCJ-02 (6 iterations); forward round-trip error < 1e-9 degrees",
+  "places": [
+    {
+      "shopId": "food-5",
+      "number": 1,
+      "guideRef": "1118741248843715",
+      "guideName": "溪屯肠来肠往屯堡烤小肠",
+      "name": "溪屯肠来肠往屯堡烤小肠",
+      "shortName": "溪屯肠来肠往屯堡烤小肠",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区清水湾马槽社区龙青路竹园B区负1-19",
+      "category": "自助烤肉",
+      "gcj02": [
+        26.242538,
+        105.95315
+      ],
+      "coordinates": [
+        26.2460595,
+        105.9497793
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F97D3EBB9FC3&_provider=57879",
+      "dianpingId": null
+    },
+    {
+      "shopId": "food-7",
+      "number": 2,
+      "guideRef": "1118368928133365",
+      "guideName": "新桥罗记肉饼（顾府街）",
+      "name": "新桥罗记肉饼（顾府街）",
+      "shortName": "新桥罗记肉饼",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区蒋衙街16号附1号（顾府街商圈）",
+      "category": "肉饼",
+      "gcj02": [
+        26.243927,
+        105.935239
+      ],
+      "coordinates": [
+        26.2474799,
+        105.9319056
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9268EB070F5&_provider=57879",
+      "dianpingId": null
+    },
+    {
+      "shopId": "food-8",
+      "number": 3,
+      "guideRef": "1118551574079189",
+      "guideName": "王记首家多味香辣裹卷",
+      "name": "王记首家多味香辣裹卷",
+      "shortName": "王记首家多味香辣裹卷",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区顾府街利安商场（西西弗书店楼下）",
+      "category": "裹卷",
+      "gcj02": [
+        26.244864,
+        105.936099
+      ],
+      "coordinates": [
+        26.2484162,
+        105.9327641
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F951153C66D5&_provider=57879",
+      "dianpingId": null
+    },
+    {
+      "shopId": "food-9",
+      "number": 4,
+      "guideRef": "1118368734930260",
+      "guideName": "何记裹卷",
+      "name": "何记裹卷",
+      "shortName": "何记裹卷",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区顾府街（西西弗书店楼下；另有时代名苑店）",
+      "category": "裹卷、凉面",
+      "gcj02": [
+        26.244694,
+        105.936127
+      ],
+      "coordinates": [
+        26.2482461,
+        105.9327921
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F926832C6554&_provider=57879",
+      "dianpingId": null
+    },
+    {
+      "shopId": "food-10",
+      "number": 5,
+      "guideRef": "1118368671139173",
+      "guideName": "小忆小锅凉粉",
+      "name": "小忆小锅凉粉",
+      "shortName": "小忆小锅凉粉",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区中华西路（西街）乐购城一带",
+      "category": "小锅凉粉",
+      "gcj02": [
+        26.245119,
+        105.930091
+      ],
+      "coordinates": [
+        26.2486788,
+        105.9267656
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9267F5F0565&_provider=57879",
+      "dianpingId": null
+    },
+    {
+      "shopId": "food-11",
+      "number": 6,
+      "guideRef": "1118368878486638",
+      "guideName": "杨记牛杂",
+      "name": "杨记牛杂",
+      "shortName": "杨记牛杂",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区花鸟市场（华西街道，门牌未核实）",
+      "category": "牛肉清汤锅",
+      "gcj02": [
+        26.261582,
+        105.908681
+      ],
+      "coordinates": [
+        26.2651646,
+        105.9053744
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9268BBAE46E&_provider=57879",
+      "dianpingId": "1963313623"
+    },
+    {
+      "shopId": "food-12",
+      "number": 7,
+      "guideRef": "1118650628362591",
+      "guideName": "黔牛之味清真牛肉火锅直营店",
+      "name": "黔牛之味清真牛肉火锅",
+      "shortName": "黔牛之味清真牛肉火锅",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区新安街道家喻五洲10号地1栋",
+      "category": "干锅牛肉",
+      "gcj02": [
+        26.271087,
+        105.966155
+      ],
+      "coordinates": [
+        26.2745946,
+        105.9627477
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9682554D15F&_provider=57879",
+      "dianpingId": "962608935"
+    },
+    {
+      "shopId": "food-13",
+      "number": 8,
+      "guideRef": "1118835170561473",
+      "guideName": "多财铁板烧店",
+      "name": "多财铁板烧",
+      "shortName": "多财铁板烧",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区南街街道中华南路15号南华圣景1号楼1层3号铺(南水路一侧)",
+      "category": "铁板烧",
+      "gcj02": [
+        26.237794,
+        105.93806
+      ],
+      "coordinates": [
+        26.2413394,
+        105.934722
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9931CE74DC1&_provider=57879",
+      "dianpingId": "1120083531"
+    },
+    {
+      "shopId": "food-14",
+      "number": 9,
+      "guideRef": "1118912675855512",
+      "guideName": "刘记烙锅",
+      "name": "刘记烙锅",
+      "shortName": "刘记烙锅",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区太和街56号",
+      "category": "烙锅",
+      "gcj02": [
+        26.244725,
+        105.936025
+      ],
+      "coordinates": [
+        26.2482772,
+        105.9326902
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9A528943C98&_provider=57879",
+      "dianpingId": null
+    },
+    {
+      "shopId": "food-16",
+      "number": 10,
+      "guideRef": "1118368601703700",
+      "guideName": "兴梦回民餐馆连锁店",
+      "name": "兴梦回民餐馆",
+      "shortName": "兴梦回民餐馆",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区凌云路土桥村委会对面",
+      "category": "牛肉粉",
+      "gcj02": [
+        26.23352,
+        105.884059
+      ],
+      "coordinates": [
+        26.237078,
+        105.8807494
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9267B3B8514&_provider=57879",
+      "dianpingId": "17545307"
+    },
+    {
+      "shopId": "food-17",
+      "number": 11,
+      "guideRef": "1118368591599571",
+      "guideName": "陈湘莲特色小吃(油炸粑稀饭总店)",
+      "name": "陈湘莲特色小吃(油炸粑稀饭总店)",
+      "shortName": "陈湘莲特色小吃",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区西门综合市场旁",
+      "category": "油炸糍粑放到稀饭里",
+      "gcj02": [
+        26.242331,
+        105.928412
+      ],
+      "coordinates": [
+        26.2458911,
+        105.9250891
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9267AA157D3&_provider=57879",
+      "dianpingId": "77686914"
+    },
+    {
+      "shopId": "food-18",
+      "number": 12,
+      "guideRef": "1118771006687951",
+      "guideName": "屯滋味·灌汤猪脚·肥肠鸡·三烧牛肉(蒋衙街店)",
+      "name": "屯滋味·灌汤猪脚·肥肠鸡·三烧牛肉(蒋衙街店)",
+      "shortName": "屯滋味·灌汤猪脚·肥肠鸡·三烧牛肉",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区中华南路与蒋衙街交叉口正东方向60米",
+      "category": "灌汤猪脚",
+      "gcj02": [
+        26.24404,
+        105.934384
+      ],
+      "coordinates": [
+        26.247594,
+        105.931052
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9842C704ACF&_provider=57879",
+      "dianpingId": "845557608"
+    },
+    {
+      "shopId": "food-19",
+      "number": 13,
+      "guideRef": "1118898384768177",
+      "guideName": "刘成刚刘老实食府(古城店)",
+      "name": "刘成刚刘老实食府(古城店)",
+      "shortName": "刘成刚刘老实食府",
+      "region": "anshun",
+      "address": "中国贵州省安顺市西秀区历史文化街区",
+      "category": "鱼片火锅",
+      "gcj02": [
+        26.248696,
+        105.933893
+      ],
+      "coordinates": [
+        26.2522533,
+        105.9305616
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9A1D4C38CB1&_provider=57879",
+      "dianpingId": "1025346753389176"
+    },
+    {
+      "shopId": "food-21",
+      "number": 14,
+      "guideRef": "1118864426829720",
+      "guideName": "段记包子",
+      "name": "段记包子",
+      "shortName": "段记包子",
+      "region": "anshun",
+      "address": "",
+      "category": "",
+      "gcj02": [
+        26.249412,
+        105.928533
+      ],
+      "coordinates": [
+        26.2529759,
+        105.9252096
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F999ECB68798&_provider=57879",
+      "dianpingId": null
+    },
+    {
+      "shopId": "food-48",
+      "number": 1,
+      "guideRef": "1118864266916289",
+      "guideName": "陈氏人家豆米火锅(喷水池店)",
+      "name": "陈氏人家豆米火锅（喷水池店）",
+      "shortName": "陈氏人家豆米火锅",
+      "region": "guiyang",
+      "address": "中国贵州省贵阳市云岩区省府北街1号省府北街1号院(园通街)",
+      "category": "豆米火锅",
+      "gcj02": [
+        26.582713,
+        106.714209
+      ],
+      "coordinates": [
+        26.5862403,
+        106.7104429
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F999E32E71C1&_provider=57879",
+      "dianpingId": "1477231415"
+    },
+    {
+      "shopId": "food-49",
+      "number": 2,
+      "guideRef": "1118593560421262",
+      "guideName": "贵厨酸汤牛肉(小十字店)",
+      "name": "贵厨酸汤牛肉（小十字店）",
+      "shortName": "贵厨酸汤牛肉",
+      "region": "guiyang",
+      "address": "中国贵州省贵阳市南明区中山东路40号银座商务大厦裙楼2层2-6至2-20、2-24至2-30号",
+      "category": "酸汤牛肉火锅",
+      "gcj02": [
+        26.577463,
+        106.715842
+      ],
+      "coordinates": [
+        26.5809874,
+        106.7120727
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F95ADBD1238E&_provider=57879",
+      "dianpingId": "696599367"
+    },
+    {
+      "shopId": "food-50",
+      "number": 3,
+      "guideRef": "1118757109731694",
+      "guideName": "民生路好吃街",
+      "name": "民生路好吃街",
+      "shortName": "民生路好吃街",
+      "region": "guiyang",
+      "address": "中国贵州省贵阳市云岩区民生路10号",
+      "category": "各种小吃",
+      "gcj02": [
+        26.57938,
+        106.716503
+      ],
+      "coordinates": [
+        26.5829038,
+        106.7127323
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F980F01D916E&_provider=57879",
+      "dianpingId": "1982095547"
+    },
+    {
+      "shopId": "food-51",
+      "number": 4,
+      "guideRef": "1118368804076028",
+      "guideName": "杨记烤肉",
+      "name": "杨记烤肉",
+      "shortName": "杨记烤肉",
+      "region": "guiyang",
+      "address": "中国贵州省贵阳市云岩区中环社区服务中心瑞金北路128号附4号",
+      "category": "烧烤",
+      "gcj02": [
+        26.587017,
+        106.704755
+      ],
+      "coordinates": [
+        26.5905588,
+        106.7010102
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F926874B79FC&_provider=57879",
+      "dianpingId": "21690173"
+    },
+    {
+      "shopId": "food-53",
+      "number": 5,
+      "guideRef": "1118731560852820",
+      "guideName": "六广门毛阿姨糯米饭(人剧店)",
+      "name": "六厂门毛阿姨糯米饭（人剧店）",
+      "shortName": "六厂门毛阿姨糯米饭",
+      "region": "guiyang",
+      "address": "中国贵州省贵阳市云岩区中华中路77号(喷水池地铁站H口步行430米)",
+      "category": "糯米饭",
+      "gcj02": [
+        26.580443,
+        106.712143
+      ],
+      "coordinates": [
+        26.5839728,
+        106.7083815
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F97AFD489D54&_provider=57879",
+      "dianpingId": "926456118"
+    },
+    {
+      "shopId": "food-54",
+      "number": 6,
+      "guideRef": "1118368771646620",
+      "guideName": "杜姨妈超一牛牛肉粉",
+      "name": "杜姨妈超一牛牛肉粉",
+      "shortName": "杜姨妈超一牛牛肉粉",
+      "region": "guiyang",
+      "address": "中国贵州省贵阳市云岩区富水北路83-3号(物资大厦正对面)",
+      "category": "牛肉粉",
+      "gcj02": [
+        26.584557,
+        106.714579
+      ],
+      "coordinates": [
+        26.588084,
+        106.710812
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F926855CA49C&_provider=57879",
+      "dianpingId": "22024993"
+    },
+    {
+      "shopId": "food-55",
+      "number": 7,
+      "guideRef": "1118368922284314",
+      "guideName": "夜夜香特色板筋盖饭",
+      "name": "夜夜香特色板筋盖饭",
+      "shortName": "夜夜香特色板筋盖饭",
+      "region": "guiyang",
+      "address": "中国贵州省贵阳市云岩区建设银行阳明支行50号(喷水池地铁站J口步行490米)",
+      "category": "板筋饭",
+      "gcj02": [
+        26.586619,
+        106.714147
+      ],
+      "coordinates": [
+        26.5901468,
+        106.7103808
+      ],
+      "coordinateSystem": "WGS84",
+      "appleUrl": "https://maps.apple.com/place?place-id=H2710I3F9268E57311A&_provider=57879",
+      "dianpingId": "80033810"
+    }
+  ],
+  "lodging": {
+    "name": "禧竹山房",
+    "region": "huaxi",
+    "gcj02": [
+      26.330487,
+      106.683392
+    ],
+    "coordinates": [
+      26.3339903,
+      106.6797159
+    ],
+    "guideRef": "1118637485387568"
+  }
+}

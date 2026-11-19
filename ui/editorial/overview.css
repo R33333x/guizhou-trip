@@ -1,0 +1,50 @@
+/* The route sketch carries the overview; remaining information stays compact. */
+#overview{padding-top:24px}
+#overview>.map-fold{margin-bottom:16px}
+#overview .overview-days{gap:9px;margin-bottom:12px}
+#overview .overview-day{display:grid;grid-template-columns:1fr auto;align-items:center;align-content:center;gap:5px 8px;min-height:90px;padding:13px 15px;text-align:left}
+#overview .overview-day::before{left:15px;width:20px;height:2px}
+#overview .overview-day-date{display:flex;align-items:baseline;gap:7px;min-width:0}
+#overview .overview-day-date strong{font-size:20px;font-weight:550;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+#overview .overview-day-date small{font-size:10px;color:var(--muted)}
+#overview .overview-day .day-name{grid-column:1;grid-row:2;font-size:12px;line-height:1.6;letter-spacing:0;margin:0;white-space:normal}
+#overview .overview-day .day-open{grid-column:2;grid-row:1/3;align-self:center;font-size:15px;margin:0}
+#overview .overview-bottom{grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:12px;margin-top:0}
+#overview .travel-summary{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:15px 18px;min-height:104px}
+#overview .travel-summary>div+div{border-left:1px solid var(--line);padding-left:16px}
+#overview .travel-summary small{display:block;font-size:10px;color:var(--muted);line-height:1.7}
+#overview .travel-summary strong{font-size:21px;font-weight:550;line-height:1.5;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin:3px 0 4px}
+#overview .travel-summary strong span{font-size:12px;color:var(--muted);padding:0 7px}
+#overview .travel-summary p{font-size:10px;color:var(--muted);line-height:1.7;overflow-wrap:anywhere}
+#overview .overview-stay{display:flex;align-items:center;justify-content:flex-start;gap:13px;text-align:left;padding:15px 18px;min-height:104px;width:100%;font:inherit;color:var(--text)}
+#overview .overview-stay>.icon{width:25px;height:25px;flex-shrink:0}
+#overview .overview-stay>span:first-of-type{flex:1;min-width:0}
+#overview .overview-stay small{display:block;font-size:10px;color:var(--muted);line-height:1.7}
+#overview .overview-stay strong{display:block;font-size:20px;line-height:1.6;letter-spacing:.06em;font-weight:500;margin-top:4px}
+#overview .overview-stay>span:last-child{font-size:16px}
+#overview .origin-summary{display:flex;flex-direction:row;text-align:left;align-items:center;justify-content:space-between;gap:15px;padding:15px 18px;min-height:104px}
+#overview .origin-summary>span{font-size:12px;color:var(--muted)}
+#overview .origin-summary .text-button{font-size:12px;min-height:44px;flex-shrink:0}
+@media(max-width:767px){
+ #overview{padding-top:20px}
+ #overview .overview-days{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ #overview .overview-day{min-height:73px;padding:10px 12px;gap:3px 5px}
+ #overview .overview-day::before{left:12px;width:18px}
+ #overview .overview-day-date strong{font-size:19px}
+ #overview .overview-day-date small{font-size:9px}
+ #overview .overview-day .day-name{font-size:11px}
+ #overview .overview-day .day-open{font-size:13px}
+ #overview .overview-bottom{grid-template-columns:1fr;gap:10px}
+ #overview .travel-summary{min-height:0;padding:13px 14px;gap:12px}
+ #overview .travel-summary>div+div{padding-left:12px}
+ #overview .travel-summary strong{font-size:19px;white-space:nowrap}
+ #overview .travel-summary strong span{padding:0 5px}
+ #overview .travel-summary small,#overview .travel-summary p{font-size:9px}
+ #overview .overview-stay{min-height:70px;padding:12px 15px;gap:12px}
+ #overview .overview-stay>span:first-of-type{display:flex;flex-direction:row-reverse;align-items:baseline;justify-content:flex-end;gap:12px;flex-wrap:wrap}
+ #overview .overview-stay strong{font-size:18px;margin:0}
+ #overview .overview-stay small{font-size:9px}
+ #overview .origin-summary{min-height:72px;padding:12px 14px;gap:10px}
+ #overview .origin-summary>span,#overview .origin-summary .text-button{font-size:11px}
+}
+@media(max-width:359px){#overview .travel-summary strong{font-size:17px}#overview .travel-summary strong span{padding:0 3px}#overview .overview-stay>span:first-of-type{gap:5px}}

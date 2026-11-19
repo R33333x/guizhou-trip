@@ -84,17 +84,31 @@ heroMobile=heroMobile.replace('</svg>',flower(365,161,.27,12,'#476f9b','#557e65'
 import json
 import re
 original={name:s for name,s in [('cover',hero),('coverMobile',heroMobile),('main',main),('mainMobile',mainMobile)]}
+# Recolor the established SVG silhouettes without changing paths or placement.
+schemes=json.loads((Path(__file__).resolve().parent/'schemes.json').read_text())
 assets={}
 primary=['#285aca','#284dbd','#2859c4','#305bcc','#2b5ac9','#264fba','#2b5dcc','#476f9b','#4a7198','#567ca0','#55769b']
 alternate=['#237a62','#227f65','#238068','#207b64','#557e65','#5e826a']
-for theme,background,seedColor in [('light','#DAECF4','#232826'),('dark','#232826','#DAECF4')]:
- assets[theme]={}
- for name,svgText in original.items():
-  svgText=re.sub(r'#[0-9A-Fa-f]{6}',lambda m:background if m[0]=='#103c2f' else '#558F14' if m[0] in primary else '#509EAB' if m[0] in alternate else seedColor if m[0]=='#c49d51' else '#509EAB' if m[0]=='#234ed0' else m[0],svgText)
-  assets[theme][name]='data:image/svg+xml,'+quote(svgText,safe='')
+for look,scheme in schemes.items():
+ assets[look]={}
+ for theme,colors in ((theme,scheme[theme]) for theme in ['light','dark']):
+  assets[look][theme]={}
+  def recolor(match):
+   color=match[0]
+   if color=='#103c2f':return colors['bg']
+   if color in primary:return colors['primary']
+   if color in alternate:return colors['alternate']
+   if color=='#c49d51':return colors['seed']
+   if color=='#234ed0':return colors['alternate']
+   return color
+  for name,svgText in original.items():
+   svgText=re.sub(r'#[0-9A-Fa-f]{6}',recolor,svgText)
+   assets[look][theme][name]='data:image/svg+xml,'+quote(svgText,safe='')
 (output/'art.json').write_text(json.dumps(assets))
 css=[]
-for theme,urls in assets.items():
- css.append(':root[data-palette="'+theme+'"]{--botanical-cover:url("'+urls['cover']+'");--botanical-main:url("'+urls['main']+'");}')
- css.append('@media(max-width:767px){:root[data-palette="'+theme+'"]{--botanical-cover:url("'+urls['coverMobile']+'");--botanical-main:url("'+urls['mainMobile']+'");}}')
+for look,themes in assets.items():
+ for theme,urls in themes.items():
+  selector=':root[data-look="'+look+'"][data-palette="'+theme+'"]'
+  css.append(selector+'{--botanical-cover:url("'+urls['cover']+'");--botanical-main:url("'+urls['main']+'");}')
+  css.append('@media(max-width:767px){'+selector+'{--botanical-cover:url("'+urls['coverMobile']+'");--botanical-main:url("'+urls['mainMobile']+'");}}')
 (output/'art.css').write_text('\n'.join(css))
