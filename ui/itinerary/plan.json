@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "days": [
     {
       "day": 1,
@@ -8,8 +8,8 @@
     },
     {
       "day": 2,
-      "theme": "黄果树 + 铜鼓荡",
-      "map": "民宿 → 安顺早餐 → 黄果树 → 午餐 → 铜鼓荡 → 安顺晚饭 → 民宿",
+      "theme": "安顺自由行 + 黄果树",
+      "map": "民宿 → 安顺早餐 / 自由活动 → 黄果树 → 花溪晚饭 → 民宿",
       "short": "安顺"
     },
     {
@@ -64,47 +64,42 @@
     {
       "id": "d2-car",
       "day": 2,
-      "title": "大巴出发去安顺",
+      "time": "2026-11-28T06:15:00+08:00",
+      "title": "乘大巴去安顺",
       "kind": "transport",
-      "note": "从民宿出发，车程约 1 小时。",
-      "timeLabel": "早上",
       "place": "hotel",
-      "duration": 60
+      "duration": 75,
+      "note": "06:15 从民宿出发，预计 07:30 到安顺市中心。"
     },
     {
       "id": "d2-breakfast",
       "day": 2,
-      "title": "吃早餐",
+      "time": "2026-11-28T07:30:00+08:00",
+      "title": "到安顺，分组吃早饭",
       "kind": "food",
-      "note": "在安顺吃好早餐，再去黄果树。",
-      "timeLabel": "到安顺后",
       "place": "anshun",
+      "note": "到安顺后早点吃早餐，给自由活动留出时间。",
       "foodRegions": [
         "anshun"
       ]
     },
     {
-      "id": "d2-falls",
+      "id": "d2-free",
       "day": 2,
-      "title": "黄果树瀑布 · 约 4 小时",
-      "kind": "sight",
-      "note": "乘大巴前往景区，游览后出园吃午饭。",
       "timeLabel": "早餐后",
-      "place": "falls",
-      "duration": 240,
-      "routeMap": {
-        "id": "falls",
-        "title": "黄果树游览路线图",
-        "src": ""
-      }
+      "title": "自由活动：小景点 / 铜鼓荡",
+      "kind": "sight",
+      "place": "tonggu",
+      "placeLabel": "铜鼓荡（可选）",
+      "note": "可逛市区小景点，也可自行去铜鼓荡。去铜鼓荡需留足往返时间，11:00 前回到安顺市中心集合。"
     },
     {
       "id": "d2-lunch",
       "day": 2,
-      "title": "午饭、休息",
+      "timeLabel": "集合前",
+      "title": "早点吃午饭",
       "kind": "food",
-      "note": "找地方吃午饭，休息后去铜鼓荡。",
-      "timeLabel": "午间",
+      "note": "午饭尽量提前吃，11:00 在安顺市中心集合。",
       "foodRegions": [
         "anshun"
       ]
@@ -112,47 +107,51 @@
     {
       "id": "d2-transfer",
       "day": 2,
-      "title": "大巴前往铜鼓荡",
+      "time": "2026-11-28T11:00:00+08:00",
+      "title": "安顺市中心集合，乘大巴去黄果树",
       "kind": "transport",
-      "note": "黄果树出发，前往铜鼓荡。",
-      "timeLabel": "午饭后"
-    },
-    {
-      "id": "d2-tonggu",
-      "day": 2,
-      "title": "铜鼓荡 · 约 3 小时",
-      "kind": "walk",
-      "note": "结伴徒步，结束后去安顺吃晚饭。",
-      "timeLabel": "下午",
-      "place": "tonggu",
-      "duration": 180,
-      "routeMap": {
-        "id": "tonggu",
-        "title": "铜鼓荡游览路线图",
-        "src": ""
-      }
-    },
-    {
-      "id": "d2-dinner",
-      "day": 2,
-      "title": "在安顺吃晚饭",
-      "kind": "food",
-      "note": "吃完集合，一起乘大巴回民宿。",
-      "timeLabel": "游玩后",
       "place": "anshun",
-      "foodRegions": [
-        "anshun"
-      ]
+      "duration": 60,
+      "note": "11:00 集合出发，预计 12:00 到黄果树景区。"
+    },
+    {
+      "id": "d2-falls",
+      "day": 2,
+      "time": "2026-11-28T12:00:00+08:00",
+      "title": "游览黄果树瀑布",
+      "kind": "sight",
+      "place": "falls",
+      "duration": 300,
+      "note": "霞客亭看全景 → 大瀑布 / 水帘洞 → 天星桥下半程，17:00 前回到集合点。",
+      "routeMap": {
+        "id": "falls",
+        "title": "黄果树游览路线图",
+        "src": "assets/routes/huangguoshu-route-dark.png",
+        "width": 1440,
+        "height": 2180,
+        "srcLight": "assets/routes/huangguoshu-route-light.png",
+        "srcDark": "assets/routes/huangguoshu-route-dark.png"
+      }
     },
     {
       "id": "d2-return",
       "day": 2,
-      "title": "大巴回民宿",
+      "time": "2026-11-28T17:00:00+08:00",
+      "title": "乘大巴返程",
       "kind": "transport",
-      "note": "一起返程，车程约 1 小时 20 分钟。",
-      "timeLabel": "饭后",
-      "place": "hotel",
-      "duration": 80
+      "duration": 120,
+      "note": "从黄果树出发，预计车程约 2 小时。"
+    },
+    {
+      "id": "d2-dinner",
+      "day": 2,
+      "time": "2026-11-28T19:00:00+08:00",
+      "title": "预计到花溪，吃晚饭",
+      "kind": "food",
+      "note": "在民宿周边选店，饭后回禧竹山房。",
+      "foodRegions": [
+        "huaxi"
+      ]
     },
     {
       "id": "d3-morning",
@@ -195,7 +194,11 @@
       "routeMap": {
         "id": "qianling",
         "title": "黔灵山公园游览路线图",
-        "src": ""
+        "src": "assets/routes/qianling-route-dark.png",
+        "width": 1440,
+        "height": 2180,
+        "srcLight": "assets/routes/qianling-route-light.png",
+        "srcDark": "assets/routes/qianling-route-dark.png"
       }
     },
     {
@@ -280,7 +283,7 @@
         "x": 300,
         "y": 370
       },
-      "tip": "早餐、午餐和晚餐可在美食地图中选店。"
+      "tip": "早餐后自由活动，11:00 在安顺市中心集合乘大巴；具体集合点以群内通知为准。"
     },
     {
       "id": "city",
@@ -292,11 +295,11 @@
     },
     {
       "id": "tonggu",
-      "tip": "徒步约 3 小时，提前保存离线地图，约好集合点。"
+      "tip": "上午自由活动的可选项；完整徒步约 3 小时，需先核对往返时间，确保 11:00 回到安顺市中心集合。"
     },
     {
       "id": "falls",
-      "tip": "游玩约 4 小时，凭本人证件及订单入园。",
+      "tip": "预计 12:00 到景区，17:00 乘大巴返程；凭本人证件及订单入园。",
       "day": 2
     },
     {
@@ -321,7 +324,7 @@
     },
     {
       "title": "提前约车",
-      "body": "周六乘大巴往返安顺，晚饭后一起回民宿；周日结伴打车去市区，饭后各自打车回民宿。"
+      "body": "周六大巴串联安顺与黄果树，17:00 返程，预计 19:00 到花溪吃晚饭；周日结伴打车往返贵阳市区。"
     },
     {
       "title": "离线也能找路",

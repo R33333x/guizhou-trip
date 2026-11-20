@@ -57,7 +57,7 @@ $('food-photo-close').addEventListener('click',closeFoodPhoto);
 function addFoodDayLinks(){
  for(const day of [1,2,3,4]){
   const host=$('day-'+day);if(!host||host.querySelector('.food-day-link'))continue;
-  const regions=day===1?['guiyang']:day===2?['anshun']:day===3?['guiyang']:['huaxi'];
+  const regions=day===1?['guiyang']:day===2?['anshun','huaxi']:day===3?['guiyang']:['huaxi'];
   const area=regions.map(id=>FOOD_REGIONS.find(r=>r.id===id));
   const aside=document.createElement('aside');aside.className='food-day-link';aside.innerHTML=`<span>这一站吃什么</span>${area.map(r=>`<button type="button" class="external-button" data-food-open="${r.id}">${r.name}美食 →</button>`).join('')}`;
   host.querySelector('.day-footer')?.before(aside);

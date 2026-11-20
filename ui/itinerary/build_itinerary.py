@@ -40,7 +40,7 @@ for update in plan['places']:
 data['TIPS'] = plan['tips']
 for key in ['fallback', 'risk', 'mileage']:
     data['INFO'].pop(key, None)
-data['INFO']['car'] = '周六大巴往返安顺，晚饭后一起回民宿；周日结伴打车往返贵阳市区。'
+data['INFO']['car'] = '周六 06:15 民宿出发，11:00 安顺市中心集合去黄果树，17:00 大巴返程，预计 19:00 到花溪吃晚饭；周日结伴打车往返贵阳市区。'
 for item in data['PACKING']:
     if item['id'] == 'water':
         item['note'] = '徒步前装好，按个人消耗和当天行程备足饮水。'
@@ -102,5 +102,10 @@ assert not any(text in html for text in obsolete), [(text, html[max(0,m.start()-
 kit_config = json.loads((source / 'daily-kit.json').read_text())
 kit_runtime = '/* BEGIN DAILY_KIT_RUNTIME */\nconst DAILY_KITS=' + json.dumps(kit_config, ensure_ascii=False, separators=(',', ':')) + ';\n' + (source / 'dailyKit.js').read_text() + '\n/* END DAILY_KIT_RUNTIME */\n'
 html = html.replace('function renderDays(){', kit_runtime + 'function renderDays(){', 1)
+route_runtime = '/* BEGIN ROUTE_IMAGE_RUNTIME */\n' + (source / 'routeImages.js').read_text() + '\n/* END ROUTE_IMAGE_RUNTIME */'
+if '/* BEGIN ROUTE_IMAGE_RUNTIME */' in html:
+    html = re.sub(r'/\* BEGIN ROUTE_IMAGE_RUNTIME \*/[\s\S]*?/\* END ROUTE_IMAGE_RUNTIME \*/', lambda _: route_runtime, html, count=1)
+else:
+    html = html.replace('/* BEGIN FOOD_RUNTIME */', route_runtime + '\n/* BEGIN FOOD_RUNTIME */', 1)
 page.write_text(html)
-print('Built four-day timelines with three route map slots and contextual meal links.')
+print('Built four-day timelines with two themed route maps and contextual meal links.')

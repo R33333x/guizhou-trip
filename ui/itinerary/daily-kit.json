@@ -28,7 +28,7 @@
     },
     {
       "id": "shoes",
-      "title": "防滑登山鞋"
+      "title": "防滑鞋（徒步选登山鞋）"
     },
     {
       "id": "raincoat",
@@ -36,7 +36,7 @@
     },
     {
       "id": "backpack",
-      "title": "登山背包"
+      "title": "背包（徒步选登山包）"
     },
     {
       "id": "water",
@@ -52,7 +52,8 @@
     },
     {
       "id": "socks",
-      "title": "备用干袜"
+      "title": "备用干袜",
+      "optional": true
     },
     {
       "id": "light",
